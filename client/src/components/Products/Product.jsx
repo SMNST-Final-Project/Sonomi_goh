@@ -1,5 +1,6 @@
 import { FavoriteBorder, Search, ShoppingCartCheckoutOutlined } from "@mui/icons-material";
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 //import Announcement from "../Announcement/Announcement";
 
 
@@ -76,7 +77,9 @@ const Product = ({item}) => {
        <ShoppingCartCheckoutOutlined />
         </Icon> 
         <Icon>
+        <Link to={`${item._id}`}>
        <Search />
+       </Link>
         </Icon>
         <Icon>
        <FavoriteBorder />

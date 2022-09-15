@@ -1,22 +1,20 @@
 import { Add, Remove } from "@mui/icons-material";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { Announcement } from "../../components/Announcement/Announcement";
-import {Footer} from "../../components/Footer/Footer";
-import {Navbar} from "../../components/Navbar/Navbar";
-import {Newsletter} from "../../components/Newsletter/Newsletter";
+import { Footer } from "../../components/Footer/Footer";
+import { Navbar } from "../../components/Navbar/Navbar";
+import { Newsletter } from "../../components/Newsletter/Newsletter";
 import { mobile } from "../../responsive";
-
-
-
+import { publicRequest } from "../../requestMethods";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
-  ${mobile({ padding: "10px",flexDirection: "column"})}
-  
-
+  ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 
 const ImgContainer = styled.div`
@@ -27,13 +25,12 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
-  ${mobile({ height: "45vh"})}
-  
+  ${mobile({ height: "45vh" })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
-  ${mobile({ padding: "10px"})}
+  ${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -53,8 +50,7 @@ const FilterContainer = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
-  ${mobile({ width: "100%"})}
-  
+  ${mobile({ width: "100%" })}
 `;
 const Filter = styled.div`
   display: flex;
@@ -87,8 +83,7 @@ const AddContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${mobile({ width: "100%"})}
- 
+  ${mobile({ width: "100%" })}
 `;
 
 const AmountContainer = styled.div`
@@ -114,27 +109,49 @@ const Button = styled.button`
   background-color: white;
   cursor: pointer;
   font-weight: 500;
-  &:hover{
-      background-color: #f8f4f4;
+  &:hover {
+    background-color: #f8f4f4;
   }
 `;
 export const Product = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
   return (
-  <Container>
-     <Navbar />
-   <h3>Single Product page</h3> 
-      
-    <Wrapper>
+    <Container>
+      <Navbar />
+      <h3>Single Product page</h3>
+
+      <Wrapper>
         <ImgContainer>
-          <Image src="https://images.unsplash.com/photo-1563398643312-ae05ad974668?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGhhbmRtYWRlJTIwc29hcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>Featured Product</Title>
+          <Title>{product.title}</Title>
           <Desc>
-          NEW! Tea Tree, Peppermint and Papaya organic soap with a fresh, crisp, outdoorsy scent.
-          Awaken your senses and clear your head with pure essential oils and soothe your skin with organic plant butters and oils.
+          {product.desc}
           </Desc>
-          <Price> Є 20</Price>
+          <Price> Є {product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
@@ -153,21 +170,19 @@ export const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
+              <Remove onClick={() => handleQuantity("dec")} />
               <Amount>1</Amount>
-              <Add />
+              <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
             <Button>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
 
-     <Newsletter/> 
+      <Newsletter />
 
-     <Footer/>
-     <Announcement/>
-
-  </Container> 
-  )
-}
-
+      <Footer />
+      <Announcement />
+    </Container>
+  );
+};
