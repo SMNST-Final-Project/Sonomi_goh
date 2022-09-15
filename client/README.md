@@ -10,7 +10,7 @@
   - Layout
   - Target Devices (mobile, desktop, ...)
   - Mockups
-  - Wireframes
+  - Wire frames
   - Fonts
   - ...
 

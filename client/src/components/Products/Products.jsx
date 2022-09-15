@@ -23,7 +23,7 @@ export const Products = ({ category, filters, sort }) => {
       try {
         const res = await axios.get(
           category
-            ? `http://localhost:5000/products?category=category=${category}`
+            ? `http://localhost:5000/products?category=${category}`
             : "http://localhost:5000/products"
         );
         setProducts(res.data);
