@@ -95,6 +95,7 @@ export const getProduct = async(req, res) => {
  */
 
 export const getProducts = async (req, res) => {
+    console.log(req.query)
     const queryCategory = req.query.category; 
 
     try {

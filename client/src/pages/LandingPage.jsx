@@ -25,13 +25,13 @@ export  const LandingPage = () => {
        {/**Products Page */}
        <Button variant="text" style={{color:"brown"}}
        component={Link} 
-       to={"/productpage"}
+       to={"/products/:id"}
        >Temporary product Page Link</Button>
 
        {/**ProductsList Page */}
        <Button variant="text" style={{color:"brown"}}
        component={Link} 
-       to={"/productlist"}
+       to={"/products"}
        >Temporary product List Link</Button>
       <Slider/> 
      <Footer/> 

@@ -13,9 +13,9 @@ export const Home = () => {
    <HomeNavbar/>
  <Drawer /> 
   <h3 style={{textAlign:"center"}}>Home Component</h3>
- <Products/>
 <h3 style={{textAlign:"center", color:"green"}}>Categories</h3> 
 <Categories />
+ <Products/>
 <Footer/>
 
  <Announcement/> 

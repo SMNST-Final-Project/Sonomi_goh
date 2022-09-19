@@ -122,9 +122,11 @@ export const Product = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await publicRequest.get("/products/find/" + id);
+        const res = await publicRequest.get("/products/" + id);
         setProduct(res.data);
-      } catch {}
+      } catch (error) {
+        console.log(error.message);
+      }
     };
     getProduct();
   }, [id]);
@@ -141,7 +143,7 @@ export const Product = () => {
     <Container>
       <Navbar />
       <h3>Single Product page</h3>
-
+{console.log("product",product)}
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
@@ -149,7 +151,7 @@ export const Product = () => {
         <InfoContainer>
           <Title>{product.title}</Title>
           <Desc>
-          {product.desc}
+          {product.description}
           </Desc>
           <Price> Є {product.price}</Price>
           <FilterContainer>

@@ -39,7 +39,8 @@ const Option = styled.option``;
 
 export const ProductList = () => {
   const location = useLocation();
-  const category = location.pathname.split("/")[2];
+  const category =  new URLSearchParams(location.search).get('category')
+  console.log(category)
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState({});
   const handleFilters = (e) => {
