@@ -7,7 +7,7 @@ import { Footer } from "../../components/Footer/Footer";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Newsletter } from "../../components/Newsletter/Newsletter";
 import { mobile } from "../../responsive";
-import { publicRequest } from "../../requestMethods";
+import axios from "axios";
 
 const Container = styled.div``;
 
@@ -45,38 +45,17 @@ const Price = styled.span`
   font-size: 40px;
 `;
 
-const FilterContainer = styled.div`
+const TextContainer = styled.div`
+background-color: teal;
   width: 50%;
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
   ${mobile({ width: "100%" })}
 `;
-const Filter = styled.div`
-  display: flex;
-  align-items: center;
-`;
+const TextInstructions = styled.div``
+const TextIngredients = styled.div``
 
-const FilterTitle = styled.span`
-  font-size: 20px;
-  font-weight: 200;
-`;
-
-const FilterColor = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-  margin: 0px 5px;
-  cursor: pointer;
-`;
-
-const FilterSize = styled.select`
-  margin-left: 10px;
-  padding: 5px;
-`;
-
-const FilterSizeOption = styled.option``;
 
 const AddContainer = styled.div`
   width: 50%;
@@ -116,14 +95,17 @@ const Button = styled.button`
 export const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
+  console.log(id)
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await publicRequest.get("/products/" + id);
-        setProduct(res.data);
+        const res = await axios.get(`http://localhost:5000/products/${id}`
+        );
+        console.log("item id", id);
+         setProduct(res.data);
       } catch (error) {
         console.log(error.message);
       }
@@ -154,26 +136,18 @@ export const Product = () => {
           {product.description}
           </Desc>
           <Price> Є {product.price}</Price>
-          <FilterContainer>
-            <Filter>
-              <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
-            </Filter>
-            <Filter>
-              <FilterTitle>Quantity</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-              </FilterSize>
-            </Filter>
-          </FilterContainer>
+          <TextContainer>
+          <TextIngredients>
+              {product.ingredients}
+            </TextIngredients>
+            <TextInstructions>
+              {product.instructions}
+            </TextInstructions>
+          </TextContainer>
           <AddContainer>
             <AmountContainer>
               <Remove onClick={() => handleQuantity("dec")} />
-              <Amount>1</Amount>
+              <Amount>{quantity}</Amount>
               <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
             <Button>ADD TO CART</Button>

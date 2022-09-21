@@ -6,7 +6,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
 import ShoppingBasket from "@mui/icons-material/ShoppingBasket";
-import { useState } from 'react'
+import { useState } from "react";
 
 const Container = styled.div``;
 
@@ -118,7 +118,7 @@ const ProductPrice = styled.div`
 `;
 
 const Hr = styled.hr`
-  background-color:  #ebe2e2;
+  background-color: #ebe2e2;
   border: none;
   height: 10px;
 `;
@@ -129,7 +129,6 @@ const Summary = styled.div`
   border-radius: 10px;
   padding: 20px;
   height: 45vh;
-
 `;
 
 const SummaryTitle = styled.h1`
@@ -141,7 +140,7 @@ const SummaryItem = styled.div`
   margin: 30px 10px;
   display: flex;
   justify-content: space-between;
-//to change the font-weight of total
+  //to change the font-weight of total
   font-weight: ${(props) => props.type === "total" && "600"};
   font-size: ${(props) => props.type === "total" && "24px"};
 `;
@@ -162,15 +161,7 @@ const Button = styled.button`
 `;
 
 export const Cart = () => {
-const [count, setCount] = useState(0);
-
-//Counter
-const increment = () => {
-  setCount(count + 1);
-};
-const decrement = () => {
-  setCount(count - 1);
-};
+  
 
   return (
     <Container>
@@ -183,78 +174,49 @@ const decrement = () => {
             <TopText>
               <ShoppingBasket />
               (2)
-              </TopText>
+            </TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
 
           {/**Top button */}
-            <Link
-              to={"/pay"}
-              component={Link}
-            >
-          <TopButton >
-            CHECKOUT NOW
-            </TopButton>
-            </Link>
-          
+          <Link to={"/pay"} component={Link}>
+            <TopButton>CHECKOUT NOW</TopButton>
+          </Link>
         </Top>
         <Hr />
         <Bottom>
-
-          <Info>
-            {/**Product Info */}
-            <Product>
-              <ProductDetail>
-                <Image src="https://nfbotanicals.com/wp-content/uploads/2017/11/essential-oil-gift-set-3.jpg" />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> Essential Oil Aromatherapy Gift Set
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 93813718293
-                  </ProductId>
-                  <ProductColor color="#ebe2e2" />
-                  <ProductSize>
-                    <b>Size:</b> Small
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add  onClick={increment} />
-                  <ProductAmount  >{count}</ProductAmount>
-                  <Remove onClick={decrement}/>
-                </ProductAmountContainer>
-                <ProductPrice>Є 50</ProductPrice>
-              </PriceDetail>
-            </Product>
+          {/* <Info>
+            {cart.products.map((product) => (
+              <Product>
+                <ProductDetail>
+                  <Image src={product.img} />
+                  <Details>
+                    <ProductName>
+                      <b>Product:</b> {product.title}
+                    </ProductName>
+                    <ProductId>
+                      <b>ID:</b> {product._id}
+                    </ProductId>
+                    <ProductColor color={product.color} />
+                    <ProductSize>
+                      <b>Size:</b> {product.size}
+                    </ProductSize>
+                  </Details>
+                </ProductDetail>
+                <PriceDetail>
+                  <ProductAmountContainer>
+                    <Add />
+                    <ProductAmount>{product.quantity}</ProductAmount>
+                    <Remove />
+                  </ProductAmountContainer>
+                  <ProductPrice>
+                    $ {product.price * product.quantity}
+                  </ProductPrice>
+                </PriceDetail>
+              </Product>
+            ))}
             <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src="https://nfbotanicals.com/wp-content/uploads/2013/09/deluxe-facial-collection.jpg" />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b>Deluxe Daily Facial Routine Set
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 93813718293
-                  </ProductId>
-                  <ProductColor color="brown" />
-                  <ProductSize>
-                    <b>Size:</b> M
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                <Add  onClick={increment} />
-                  <ProductAmount  >1</ProductAmount>
-                  <Remove onClick={decrement}/>
-                </ProductAmountContainer>
-                <ProductPrice>Є 120</ProductPrice>
-              </PriceDetail>
-            </Product>
-          </Info>
+          </Info> */}
           {/**Order Summery */}
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
@@ -276,16 +238,13 @@ const decrement = () => {
             </SummaryItem>
 
             {/**Second button */}
-            <Button
-            variant="text"
-            component={Link}
-            to={"/pay"}
-            >CHECKOUT NOW 
+            <Button variant="text" component={Link} to={"/pay"}>
+              CHECKOUT NOW
             </Button>
           </Summary>
         </Bottom>
       </Wrapper>
-      <Hr style={{marginBottom:"150px"}}/>
+      <Hr style={{ marginBottom: "150px" }} />
       <Footer />
     </Container>
   );
