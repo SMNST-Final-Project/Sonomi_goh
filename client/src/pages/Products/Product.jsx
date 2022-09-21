@@ -102,7 +102,12 @@ export const Product = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/products/${id}`
+        const res = await axios.get(`http://localhost:5000/products/${id}`,
+        {
+          headers: {
+            "authorization": `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
         );
         console.log("item id", id);
          setProduct(res.data);

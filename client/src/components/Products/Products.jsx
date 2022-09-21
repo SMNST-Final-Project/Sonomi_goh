@@ -15,14 +15,16 @@ export const Products = ({ category, filters }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    
     const getProducts = async () => {
       try {
-        const res = await axios.get(
-          category
-            ? `http://localhost:5000/products?category=${category}`
-            : "http://localhost:5000/products"
-        );
+        const targetUrl = category
+          ? `http://localhost:5000/products?category=${category}`
+          : "http://localhost:5000/products";
+        const res = await axios.get(targetUrl, {
+          headers: {
+            "authorization": `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
         console.log("my category", category);
         setProducts(res.data);
       } catch (err) {

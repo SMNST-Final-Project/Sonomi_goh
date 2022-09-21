@@ -15,6 +15,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SendIcon from "@mui/icons-material/Send";
 import { Popup } from "../Popup/Popup";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Container = styled.div`
@@ -37,6 +38,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
   const changeHandler = (e) => {
     console.log(e.target.name, e.target.value);
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -51,10 +53,12 @@ const Login = () => {
       .post("http://localhost:5000/users/login", user, {
         headers: {
           "Content-Type": "application/json",
+        
         },
       })
       .then((res) => {
         console.log(res);
+        localStorage.setItem("token", res.data.token);
       })
       .catch((err) => {
         console.log(err.message);
@@ -134,7 +138,7 @@ const Login = () => {
               color="#020202"
               href="#"
               onClick={() => {
-                console.log("I'm a button.");
+                navigate("/signup");
               }}
             >
               Forgot password🤔
@@ -145,11 +149,12 @@ const Login = () => {
             Do you have an account? 🌚
             <Link
               color="#020202"
+              component="button"
+              to={"/signup"}
               onClick={() => {
-                console.log("I'm a button.");
+                navigate("/signup");
               }}
             >
-              {" "}
               Register
             </Link>
           </Typography>

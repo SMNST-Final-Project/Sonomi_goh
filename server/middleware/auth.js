@@ -2,10 +2,12 @@ import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
 export const verifyToken = async (req, res, next) => {
+    console.log("verifyToken")
     let token; 
+    console.log(req.headers)
     if (req.headers.authorization && req.headers.authorization.split(' ')[0] === "Bearer")
     
-    token = req.headers.authorization.split(' ')[1]; 
+    token = req.headers.authorization.split(' ')[1];
 
     if (!token) return res.status(401).json({ message: 'A token is required for authentication' })
     
