@@ -1,62 +1,57 @@
 import styled from "styled-components";
 import { Badge } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import { Diversity3Outlined, ShoppingCartOutlined } from "@mui/icons-material";
-import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
-import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
-import Button from "@mui/material/Button";
+import { Search, ShoppingCartOutlined } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import Sonomi from "../../assets/videoBg/9.png"
+import { mobile } from "../../responsive.js";
 
 const Container = styled.div`
-  height: 80px;
+  height: 60px;
   background-color: #ebe2e2;
+  ${mobile({ height: "50px" })}
 `;
 const Wrapper = styled.div`
-  padding: 20px 40px;
+  padding: 10px 0px;
   color: snow;
   display: flex;
   justify-content: space-between;
+  ${mobile({ padding: "10px 0px" })}
 `;
 const Logo = styled.div`
   flex: 1;
   color: black;
   cursor: pointer;
-  width: 100px;
-  height: 100px;
 `;
-
-const Search = styled.div`
+const Center = styled.div`
   flex: 1;
-  color: black;
-`;
-
-const SearchContainer = styled.div`
-  border: 0.5px solid lightGray;
-  display: flex;
   align-items: center;
-  margin-left: 15px;
-  margin-right: 25px;
-  padding: 1px;
-  margin-bottom: 5px;
-  border: none;
-  cursor: pointer;
+`;
+const SearchContainer = styled.div`
+  display: flex;
+  padding: 5px;
+  margin-left: 25px;
+  border: 0.5px solid lightgray;
+  align-items: center;
 `;
 const Input = styled.input`
   border: none;
+  ${mobile({ width: "50px" })}
 `;
-/*const Team = styled.div`
-  flex: 1;
-  margin-left: 250px;
-  color: black;
-  cursor: pointer;
-  font-weight: 400;
-`;*/
-
-const MenuItem = styled.div`
+const Team = styled.span`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 15px;
+`;
+const Right = styled.div`
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  ${mobile({ justifyContent: "center" })}
+`;
+const MenuItem = styled.div`
+  margin-left: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
 export const Navbar = () => {
@@ -68,67 +63,40 @@ export const Navbar = () => {
           <Logo>
             <Link
               to="/home"
+              style={{
+                color: "black",
+                textDecoration: "none",
+                fontSize: "20px",
+              }}
+              activeStyle={{ color: "red" }}
             >
-              <img src={Sonomi} alt="" width="150px" height="150px" />
+              SMNST LOGO
             </Link>
           </Logo>
-          {/**Search Bar */}
-          <SearchContainer>
-            <Search>Search</Search>
-            <Input />
-            <SearchIcon
-              style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
-            />
-          </SearchContainer>
-
-          {/**Team Link */}
-          <Button
-            variant="text"
-            component={Link}
-            to={"/team"}
-            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
-          >
-            Team
-            <Diversity3Outlined />
-          </Button>
-
-          {/**Login button */}
-          <Button
-            variant="text"
-            component={Link}
-            to={"/login"}
-            style={{ color: "gray", marginLeft: "5px", fontSize: 15 }}
-          >
-            Log In
-            <LoginRoundedIcon />
-          </Button>
-
-          {/**Register button---MUI component  */}
-          <Button
-          size="small"
-            component={Link}
-            to={"/signup"}
-            variant="text"
-            style={{
-              color: "gray",
-              cursor: "pointer",
-              padding:"1px",
-              margin:"1px"
-            }}
-          >
-            Register
-            <HowToRegRoundedIcon />
-          </Button>
-          <MenuItem>
-            <Badge badgeContent={1} component={Link}
-            to={"/cart"}>
-              <ShoppingCartOutlined style={{ color: "gray" }} />
-            </Badge>
-          </MenuItem>
+          <Center>
+            <SearchContainer>
+              <Input />
+              <Search style={{ color: "gray", fontSize: 16 }} />
+            </SearchContainer>
+          </Center>
+          <Right>
+            <Link to="/team">
+              <Team>TEAM</Team>
+            </Link>
+            <Link to="/login">
+              <MenuItem>Login</MenuItem>
+            </Link>
+            <Link to="/register">
+              <MenuItem>Register</MenuItem>
+            </Link>
+            <Link to="/cart">
+              <Badge badgeContent='1' color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </Link>
+          </Right>
         </Wrapper>
       </Container>
     </>
   );
 };
-
-
