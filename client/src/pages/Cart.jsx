@@ -238,9 +238,14 @@ export const Cart = () => {
             </SummaryItem>
 
             {/**Second button */}
-            <Button variant="text" component={Link} to={"/pay"}>
-              CHECKOUT NOW
-            </Button>
+            <Link  to={"/pay"}
+              component={Link}
+            >
+            <Button> 
+            CHECKOUT NOW
+           </Button>
+            </Link>
+
           </Summary>
         </Bottom>
       </Wrapper>

@@ -10,7 +10,7 @@ const Container = styled.div`
   ${mobile({ height: "50px" })}
 `;
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  padding: 10px 0px;
   color: snow;
   display: flex;
   justify-content: space-between;
@@ -25,7 +25,6 @@ const Center = styled.div`
   flex: 1;
   align-items: center;
 `;
-
 const SearchContainer = styled.div`
   display: flex;
   padding: 5px;

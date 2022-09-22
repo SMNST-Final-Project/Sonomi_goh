@@ -44,8 +44,7 @@ const Login = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzIxYmRjY2IwZDE0OTVkOTdhNmJhOGUiLCJpYXQiOjE2NjMxNTU2NjB9.GijLCaEb2LUhLFS-8qHjkho3BoYOQQKc4C3IKZ56tn0";
+  //const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzIxYmRjY2IwZDE0OTVkOTdhNmJhOGUiLCJpYXQiOjE2NjMxNTU2NjB9.GijLCaEb2LUhLFS-8qHjkho3BoYOQQKc4C3IKZ56tn0";
 
   const submitHandler = (e) => {
     e.preventDefault();
