@@ -1,12 +1,19 @@
 import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 //import Announcement from "../components/Announcement";
 import { Footer } from "../components/Footer/Footer";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
 import ShoppingBasket from "@mui/icons-material/ShoppingBasket";
-import { useState } from "react";
+import StripeCheckout from "react-stripe-checkout";
+import { useState, useEffect } from "react";
+import { userRequest } from "../requestMethods.js";
+import { useNavigate } from "react-router-dom";
+
+
+const KEY = process.env.REACT_APP_STRIPE
 
 const Container = styled.div``;
 
@@ -68,7 +75,7 @@ const ProductDetail = styled.div`
 `;
 
 const Image = styled.img`
-  width: 250px;
+  width: 200px;
 `;
 
 const Details = styled.div`
@@ -120,7 +127,7 @@ const ProductPrice = styled.div`
 const Hr = styled.hr`
   background-color: #ebe2e2;
   border: none;
-  height: 10px;
+  height: 2px;
 `;
 
 const Summary = styled.div`
@@ -161,7 +168,29 @@ const Button = styled.button`
 `;
 
 export const Cart = () => {
-  
+  const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null);
+  const navigate = useNavigate();
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: 500,
+        });
+        navigate("/success", {
+          stripeData: res.data,
+          products: cart, });
+      } catch (err) {
+        console.log(err.message)
+      }
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, cart.total, navigate]);
 
   return (
     <Container>
@@ -185,7 +214,7 @@ export const Cart = () => {
         </Top>
         <Hr />
         <Bottom>
-          {/* <Info>
+           <Info>
             {cart.products.map((product) => (
               <Product>
                 <ProductDetail>
@@ -216,7 +245,7 @@ export const Cart = () => {
               </Product>
             ))}
             <Hr />
-          </Info> */}
+          </Info> 
           {/**Order Summery */}
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
@@ -238,13 +267,18 @@ export const Cart = () => {
             </SummaryItem>
 
             {/**Second button */}
-            <Link  to={"/pay"}
-              component={Link}
+            <StripeCheckout
+              name="Lama Shop"
+              image="https://avatars.githubusercontent.com/u/1486366?v=4"
+              billingAddress
+              shippingAddress
+              description={`Your total is $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey={KEY}
             >
-            <Button> 
-            CHECKOUT NOW
-           </Button>
-            </Link>
+              <Button>CHECKOUT NOW</Button>
+            </StripeCheckout>
 
           </Summary>
         </Bottom>
