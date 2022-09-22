@@ -6,6 +6,7 @@ import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
 import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import Sonomi from "../../assets/videoBg/9.png"
 
 const Container = styled.div`
   height: 80px;
@@ -21,6 +22,8 @@ const Logo = styled.div`
   flex: 1;
   color: black;
   cursor: pointer;
+  width: 100px;
+  height: 100px;
 `;
 
 const Search = styled.div`
@@ -32,9 +35,12 @@ const SearchContainer = styled.div`
   border: 0.5px solid lightGray;
   display: flex;
   align-items: center;
-  margin-left: 25px;
-  padding: 8px;
+  margin-left: 15px;
+  margin-right: 25px;
+  padding: 1px;
   margin-bottom: 5px;
+  border: none;
+  cursor: pointer;
 `;
 const Input = styled.input`
   border: none;
@@ -50,7 +56,7 @@ const Input = styled.input`
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 15px;
 `;
 
 export const Navbar = () => {
@@ -62,10 +68,8 @@ export const Navbar = () => {
           <Logo>
             <Link
               to="/home"
-              style={{ color: "black", textDecoration: "none", fontSize:"40px" }}
-              activeStyle={{ color: "red" }}
             >
-              SMNST LOGO
+              <img src={Sonomi} alt="" width="150px" height="150px" />
             </Link>
           </Logo>
           {/**Search Bar */}
@@ -93,28 +97,30 @@ export const Navbar = () => {
             variant="text"
             component={Link}
             to={"/login"}
-            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
+            style={{ color: "gray", marginLeft: "5px", fontSize: 15 }}
           >
             Log In
             <LoginRoundedIcon />
           </Button>
 
-          {/**Register button  */}
+          {/**Register button---MUI component  */}
           <Button
+          size="small"
             component={Link}
             to={"/signup"}
             variant="text"
             style={{
-              color: "white",
-              backgroundColor: "#cdc8c8",
+              color: "gray",
               cursor: "pointer",
+              padding:"1px",
+              margin:"1px"
             }}
           >
             Register
             <HowToRegRoundedIcon />
           </Button>
           <MenuItem>
-            <Badge badgeContent={1} color="primary" component={Link}
+            <Badge badgeContent={1} component={Link}
             to={"/cart"}>
               <ShoppingCartOutlined style={{ color: "gray" }} />
             </Badge>
