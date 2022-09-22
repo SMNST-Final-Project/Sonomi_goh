@@ -23,9 +23,9 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 90vh;
+  height: 50vh;
   object-fit: cover;
-  ${mobile({ height: "45vh" })}
+  ${mobile({ height: "40vh" })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
@@ -42,26 +42,16 @@ const Desc = styled.p`
 `;
 const Price = styled.span`
   font-weight: 100;
-  font-size: 40px;
+  font-size: 30px;
+  padding: 20px 0px;
 `;
-
-const TextContainer = styled.div`
-background-color: teal;
-  width: 50%;
-  margin: 30px 0px;
-  display: flex;
-  justify-content: space-between;
-  ${mobile({ width: "100%" })}
-`;
-const TextInstructions = styled.div``
-const TextIngredients = styled.div``
-
 
 const AddContainer = styled.div`
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   ${mobile({ width: "100%" })}
 `;
 
@@ -95,22 +85,20 @@ const Button = styled.button`
 export const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  console.log(id)
+  console.log(id);
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/products/${id}`,
-        {
+        const res = await axios.get(`http://localhost:5000/products/${id}`, {
           headers: {
-            "authorization": `Bearer ${localStorage.getItem("token")}`,
+            authorization: `Bearer ${localStorage.getItem("token")}`,
           },
-        }
-        );
+        });
         console.log("item id", id);
-         setProduct(res.data);
+        setProduct(res.data);
       } catch (error) {
         console.log(error.message);
       }
@@ -130,25 +118,16 @@ export const Product = () => {
     <Container>
       <Navbar />
       <h3>Single Product page</h3>
-{console.log("product",product)}
+      {console.log("product", product)}
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
           <Title>{product.title}</Title>
-          <Desc>
-          {product.description}
-          </Desc>
+          <Desc>{product.description}</Desc>
           <Price> Є {product.price}</Price>
-          <TextContainer>
-          <TextIngredients>
-              {product.ingredients}
-            </TextIngredients>
-            <TextInstructions>
-              {product.instructions}
-            </TextInstructions>
-          </TextContainer>
+
           <AddContainer>
             <AmountContainer>
               <Remove onClick={() => handleQuantity("dec")} />

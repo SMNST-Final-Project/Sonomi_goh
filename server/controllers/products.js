@@ -109,7 +109,7 @@ export const getProducts = async (req, res) => {
             });
         
         }
-        if (!products.length) products = await Product.find().sort({ createdAt: -1 }).limit(1); 
+        if (!products.length) products = await Product.find().sort({ createdAt: -1 }).limit(8); 
         
         res.status(200).send(products); 
 
