@@ -6,6 +6,7 @@ import { Announcement } from "../../components/Announcement/Announcement";
 import { Footer } from "../../components/Footer/Footer";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Newsletter } from "../../components/Newsletter/Newsletter";
+import { Drawer } from "../../components/Drawer/Drawer";
 import { mobile } from "../../responsive";
 import axios from "axios";
 
@@ -129,6 +130,7 @@ export const Product = () => {
   return (
     <Container>
       <Navbar />
+     <Drawer/> 
       <h3>Single Product page</h3>
 {console.log("product",product)}
       <Wrapper>

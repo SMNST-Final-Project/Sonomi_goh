@@ -6,6 +6,7 @@ import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import Person3OutlinedIcon from '@mui/icons-material/Person3Outlined';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
+import Sonomi from "../../assets/videoBg/9.png"
 
 
 const Container = styled.div`
@@ -20,32 +21,44 @@ const Wrapper = styled.div`
     justify-content: space-between;
 `;
 const Logo = styled.div`
-flex: 1;
-color: black;
-cursor: pointer;
+  flex: 1;
+  color: black;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
 `;
 
 const Search = styled.div`
-flex:3;
-color: black;
-`
+  flex: 1;
+  color: black;
+`;
 
 const SearchContainer = styled.div`
   border: 0.5px solid lightGray;
   display: flex;
   align-items: center;
-  margin-left: 25px;
-  padding: 8px;
+  margin-left: 15px;
+  margin-right: 25px;
+  padding: 1px;
   margin-bottom: 5px;
+  border: none;
+  cursor: pointer;
 `;
 const Input = styled.input`
   border: none;
 `;
+/*const Team = styled.div`
+  flex: 1;
+  margin-left: 250px;
+  color: black;
+  cursor: pointer;
+  font-weight: 400;
+`;*/
 
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 15px;
 `;
 
 export const HomeNavbar = () => {
@@ -56,12 +69,9 @@ export const HomeNavbar = () => {
           {/**Logo */}
           <Logo>
             <Link
-              to={"/home"}
-              component={Link}
-              style={{ color: "black", textDecoration: "none", fontSize:"40px" }}
-              activeStyle={{ color: "red" }}
+              to="/home"
             >
-              SMNST LOGO
+              <img src={Sonomi} alt="" width="150px" height="150px" />
             </Link>
           </Logo>
 
@@ -85,6 +95,7 @@ export const HomeNavbar = () => {
             Team
             <Diversity3Outlined />
           </Button>
+
             {/**Login button */}
         <Button variant="text" 
         component={Link} 
@@ -93,21 +104,21 @@ export const HomeNavbar = () => {
         </Button>
 
          {/**User Profile */}
+
         <Button 
         component={Link} 
         to={"/userprofile"} 
         variant="text" 
         style={{color: "black", 
-        backgroundColor:"#cdc8c8" , 
+        
         cursor:"pointer", 
-        borderRadius:"30%"}}>User<Person3OutlinedIcon /></Button>
+        borderRadius:"40% 40%"}}>User<Person3OutlinedIcon /></Button>
+
+
         <MenuItem>
-            <Badge badgeContent={1}
-            component={Link}
-            to={"/cart"}
-            color="primary">
-              <ShoppingCartOutlined 
-              style={{color: "gray"}}/>
+            <Badge badgeContent={1} component={Link}
+            to={"/cart"}>
+              <ShoppingCartOutlined style={{ color: "gray" }} />
             </Badge>
           </MenuItem>
         </Wrapper> 

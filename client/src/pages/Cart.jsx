@@ -1,12 +1,13 @@
-import { Add, Remove } from "@mui/icons-material";
+//import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
-//import Announcement from "../components/Announcement";
-import { Footer } from "../components/Footer/Footer";
 import { Navbar } from "../components/Navbar/Navbar";
+import { Drawer } from "../components/Drawer/Drawer";
+import { Footer } from "../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
 import ShoppingBasket from "@mui/icons-material/ShoppingBasket";
-import { useState } from "react";
+//import { useState } from "react";
+import { Announcement } from "../components/Announcement/Announcement";
 
 const Container = styled.div``;
 
@@ -52,7 +53,7 @@ const Bottom = styled.div`
   ${mobile({ flexDirection: "column" })}
 `;
 
-const Info = styled.div`
+/*const Info = styled.div`
   flex: 3;
 `;
 
@@ -115,7 +116,7 @@ const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
   ${mobile({ marginBottom: "20px" })}
-`;
+`;*/
 
 const Hr = styled.hr`
   background-color: #ebe2e2;
@@ -166,18 +167,26 @@ export const Cart = () => {
   return (
     <Container>
       <Navbar />
+     <Drawer/> 
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          {/**continue shopping---styled component*/}
+          
+         <Link to={"/productlist"}
+              component={Link}> 
+          <TopButton>
+            CONTINUE SHOPPING
+            </TopButton>
+            </Link>
           <TopTexts>
             <TopText>
               <ShoppingBasket />
               (2)
-            </TopText>
+              </TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-
+          
           {/**Top button */}
           <Link to={"/pay"} component={Link}>
             <TopButton>CHECKOUT NOW</TopButton>
@@ -251,6 +260,7 @@ export const Cart = () => {
       </Wrapper>
       <Hr style={{ marginBottom: "150px" }} />
       <Footer />
+     <Announcement/> 
     </Container>
   );
 };

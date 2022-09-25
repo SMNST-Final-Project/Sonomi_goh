@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { Navbar } from "../../components/Navbar/Navbar";
+import  { Drawer } from "../../components/Drawer/Drawer"
 import { Announcement } from "../../components/Announcement/Announcement";
 import { Products } from "../../components/Products/Products";
 import { Newsletter } from "../../components/Newsletter/Newsletter";
@@ -54,6 +55,7 @@ export const ProductList = () => {
   return (
     <Container>
       <Navbar />
+     <Drawer/> 
       <h3>This is Product List Page</h3>
       <Title>{category}</Title>
       <FilterContainer>

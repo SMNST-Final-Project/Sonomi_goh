@@ -22,7 +22,7 @@ export const Popup = () => {
   const action = (
     <>
       <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
+        
       </Button>
       <IconButton
         size="small"
@@ -42,7 +42,7 @@ export const Popup = () => {
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        message="Note archived"
+        message="LogIn SuccessFul"
         action={action}
       />
     </div>
