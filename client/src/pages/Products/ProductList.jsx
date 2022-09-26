@@ -44,6 +44,7 @@ export const ProductList = () => {
   console.log(category)
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState({});
+  
   const handleFilters = (e) => {
     const value = e.target.value;
     setFilters({
@@ -59,16 +60,16 @@ export const ProductList = () => {
       <h3>This is Product List Page</h3>
       <Title>{category}</Title>
       <FilterContainer>
-        <Filter>
+        {/*<Filter>
           <FilterText>Options</FilterText>
           <Select name="Category" onChange={handleFilters}>
-            <Option disabled selected></Option>
+            <Option selected></Option>
             <Option>Oils</Option>
             <Option>Teas</Option>
             <Option>Skin Care</Option>
             <Option>Hand Made</Option>
           </Select>
-        </Filter>
+  </Filter>*/}
 
         <Filter>
           <FilterText>Sort Products</FilterText>

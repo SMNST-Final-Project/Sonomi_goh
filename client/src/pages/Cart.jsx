@@ -1,4 +1,4 @@
-//import { Add, Remove } from "@mui/icons-material";
+import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Drawer } from "../components/Drawer/Drawer";
@@ -54,7 +54,7 @@ const Bottom = styled.div`
   ${mobile({ flexDirection: "column" })}
 `;
 
-/*const Info = styled.div`
+const Info = styled.div`
   flex: 3;
 `;
 
@@ -91,7 +91,7 @@ const ProductColor = styled.div`
   background-color: ${(props) => props.color};
 `;
 
-const ProductSize = styled.span``;
+
 
 const PriceDetail = styled.div`
   flex: 1;
@@ -117,7 +117,7 @@ const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
   ${mobile({ marginBottom: "20px" })}
-`;*/
+`;
 
 const Hr = styled.hr`
   background-color: #ebe2e2;
@@ -200,22 +200,20 @@ export const Cart = () => {
         </Top>
         <Hr />
         <Bottom>
-          {/* <Info>
+           <Info>
             {cart.products.map((product) => (
               <Product>
                 <ProductDetail>
                   <Image src={product.img} />
                   <Details>
                     <ProductName>
-                      <b>Product:</b> {product.title}
+                      <b>Product:</b> {product.item}
                     </ProductName>
                     <ProductId>
-                      <b>ID:</b> {product._id}
+                      <b>Categories</b> {product.categories}
                     </ProductId>
-                    <ProductColor color={product.color} />
-                    <ProductSize>
-                      <b>Size:</b> {product.size}
-                    </ProductSize>
+                    
+                   
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
@@ -231,7 +229,7 @@ export const Cart = () => {
               </Product>
             ))}
             <Hr />
-          </Info> */}
+          </Info> 
 
           {/**Order Summery */}
           <Summary>

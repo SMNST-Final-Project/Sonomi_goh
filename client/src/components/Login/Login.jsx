@@ -25,7 +25,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.unsplash.com/photo-1566231270035-0aaca1fd2bbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80")
+    url("https://images.unsplash.com/photo-1508401531113-289ab4692d3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fDNkJTIwaW1hZ2UlMjBuYXR1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60")
       center;
   background-size: cover;
   display: flex;
@@ -38,6 +38,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+
   const navigate = useNavigate();
   const changeHandler = (e) => {
     console.log(e.target.name, e.target.value);
@@ -70,23 +71,26 @@ const Login = () => {
     margin: "70px auto",
   };
   const avatarStyle = {
-    backgroundColor: "#6c6969",
+    backgroundColor: "#9b8888",
     padding: 5,
   };
   const btnStyle = {
-    margin: "12px 0",
+    margin: "25px 0",
+    backgroundColor: "#3c9e7e",
   };
 
   return (
+   <>
     <Container>
       <Grid>
-        <Paper elevation={10} style={paperStyle}>
+     <h2>Welcome Back</h2> 
+        <Paper elevation={12} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
-              <LockOutlinedIcon />
+              <LockOutlinedIcon style={{fontSize:"25px"}} />
             </Avatar>
 
-            <h2>Log In 👇</h2>
+            <h2>Log In</h2>
           </Grid>
           <TextField
             style={{ marginBottom: "5px" }}
@@ -113,13 +117,26 @@ const Login = () => {
 
           <FormControlLabel
             control={<Checkbox name="checkedB" color="primary" />}
-            label="Remember🧤"
+            label="Remember Me"
           />
+          {/**Forgot Password */}
+          <Typography>
+            <Link
+              color="#409460"
+              href="#"
+              style={{textDecoration:"none"}}
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
+              Forgot password?
+            </Link>
+          </Typography>
+
           {/**Sign In  */}
           <div>
             <Button
               type="submit"
-              color="grey"
               variant="contained"
               onClick={submitHandler}
               fullWidth
@@ -131,35 +148,24 @@ const Login = () => {
             <Popup />
           </div>
 
-          {/**Forgot Password */}
+          
           <Typography>
+            Don't have an account? <br/> 
             <Link
-              color="#020202"
-              href="#"
-              onClick={() => {
-                navigate("/signup");
-              }}
-            >
-              Forgot password🤔
-            </Link>
-          </Typography>
-
-          <Typography>
-            Do you have an account? 🌚
-            <Link
-              color="#020202"
+              style={{textDecoration:"none", color:"#409460"}}
               component="button"
               to={"/signup"}
               onClick={() => {
                 navigate("/signup");
               }}
             >
-              Register
+              Create an Account
             </Link>
           </Typography>
         </Paper>
       </Grid>
     </Container>
+    </> 
   );
 };
 

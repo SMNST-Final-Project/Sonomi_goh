@@ -219,7 +219,7 @@ const Register = () => {
                 {/**Submit button */}
                 <Grid xs={12} textAlign="center" sx={{ marginBottom: "1rem" }}>
                   <Button
-                    style={{ backgroundColor: "#6b7373" }}
+                    style={{ backgroundColor:"#409460" }}
                     variant="contained"
                     type="submit"
                     size="medium"

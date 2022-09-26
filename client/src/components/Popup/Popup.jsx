@@ -37,7 +37,7 @@ export const Popup = () => {
 
   return (
     <div>
-      <Button onClick={handleClick}>LogIn Successful</Button>
+      <Button  onClick={handleClick}>LogIn Successful</Button>
       <Snackbar
         open={open}
         autoHideDuration={6000}

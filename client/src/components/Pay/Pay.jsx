@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react'
 import styled from 'styled-components';
 import axios from "axios"
 import StripeCheckout from 'react-stripe-checkout';
+import logo from "../../assets/videoBg/9.png"
 
 const Stripe_Public_key= "pk_test_51LguqGDxOlCAVzm0XAuIoFZhWe4wtpAK2z1axfxmo6dQnc4uD6MSvUTxaN0kowv8fXw5AEFVzminlOPpKW4QTlSB00rUrKl9Qf"
 
@@ -70,7 +71,7 @@ export const Pay = () => {
       
       <StripeCheckout 
       name="Our Company Name" 
-      image="https://images.unsplash.com/photo-1612810806563-4cb8265db55f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fGxvZ28lMjBkZXNpZ258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+      image={logo}
       billingaddress
       shippingAddress
       description = "Total amount is  Є55"

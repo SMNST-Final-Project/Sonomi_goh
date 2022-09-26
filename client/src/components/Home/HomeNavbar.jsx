@@ -28,10 +28,7 @@ const Logo = styled.div`
   height: 100px;
 `;
 
-const Search = styled.div`
-  flex: 1;
-  color: black;
-`;
+
 
 const SearchContainer = styled.div`
   border: 0.5px solid lightGray;
@@ -78,10 +75,10 @@ export const HomeNavbar = () => {
 
          {/**Search Bar */}
         <SearchContainer >
-        <Search>Search</Search>  
-            <Input />
+          
             <SearchIcon 
-            style={{ color: "gray",marginLeft:"5px", fontSize: 16 }} />
+            style={{ color: "black",marginLeft:"5px", fontSize: 20 }} />
+            <Input />
           </SearchContainer>
 
 
