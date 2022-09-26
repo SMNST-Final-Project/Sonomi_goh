@@ -6,14 +6,12 @@ import { Footer } from "../components/Footer/Footer";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
-import ShoppingBasket from "@mui/icons-material/ShoppingBasket";
 import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect } from "react";
 import { userRequest } from "../requestMethods.js";
 import { useNavigate } from "react-router-dom";
 
-
-const KEY = process.env.REACT_APP_STRIPE
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -96,7 +94,6 @@ const ProductColor = styled.div`
   background-color: ${(props) => props.color};
 `;
 
-const ProductSize = styled.span``;
 
 const PriceDetail = styled.div`
   flex: 1;
@@ -175,6 +172,7 @@ export const Cart = () => {
   const onToken = (token) => {
     setStripeToken(token);
   };
+
   useEffect(() => {
     const makeRequest = async () => {
       try {
@@ -184,9 +182,10 @@ export const Cart = () => {
         });
         navigate("/success", {
           stripeData: res.data,
-          products: cart, });
+          products: cart,
+        });
       } catch (err) {
-        console.log(err.message)
+        console.log(err.message);
       }
     };
     stripeToken && makeRequest();
@@ -198,12 +197,10 @@ export const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
+        <Link to={"/products"} component={Link}>
           <TopButton>CONTINUE SHOPPING</TopButton>
+          </Link>
           <TopTexts>
-            <TopText>
-              <ShoppingBasket />
-              (2)
-            </TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
 
@@ -214,7 +211,7 @@ export const Cart = () => {
         </Top>
         <Hr />
         <Bottom>
-           <Info>
+          <Info>
             {cart.products.map((product) => (
               <Product>
                 <ProductDetail>
@@ -227,9 +224,6 @@ export const Cart = () => {
                       <b>ID:</b> {product._id}
                     </ProductId>
                     <ProductColor color={product.color} />
-                    <ProductSize>
-                      <b>Size:</b> {product.size}
-                    </ProductSize>
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
@@ -245,13 +239,13 @@ export const Cart = () => {
               </Product>
             ))}
             <Hr />
-          </Info> 
+          </Info>
           {/**Order Summery */}
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>Є 170</SummaryItemPrice>
+              <SummaryItemPrice></SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -279,7 +273,6 @@ export const Cart = () => {
             >
               <Button>CHECKOUT NOW</Button>
             </StripeCheckout>
-
           </Summary>
         </Bottom>
       </Wrapper>

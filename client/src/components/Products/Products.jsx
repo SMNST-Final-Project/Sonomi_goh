@@ -22,7 +22,7 @@ export const Products = ({ category, filters }) => {
           : "http://localhost:5000/products";
         const res = await axios.get(targetUrl, {
           headers: {
-            "authorization": `Bearer ${localStorage.getItem("token")}`,
+            authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
         console.log("my category", category);

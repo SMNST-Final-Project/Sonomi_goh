@@ -39,17 +39,9 @@ const Option = styled.option``;
 
 export const ProductList = () => {
   const location = useLocation();
-  const category =  new URLSearchParams(location.search).get('category')
-  console.log(category)
-  const [filters, setFilters] = useState({});
+  const category = new URLSearchParams(location.search).get("category");
+  console.log(category);
   const [sort, setSort] = useState({});
-  const handleFilters = (e) => {
-    const value = e.target.value;
-    setFilters({
-      ...filters,
-      [e.target.name]: value,
-    });
-  };
 
   return (
     <Container>
@@ -57,17 +49,6 @@ export const ProductList = () => {
       <h3>This is Product List Page</h3>
       <Title>{category}</Title>
       <FilterContainer>
-        <Filter>
-          <FilterText>Options</FilterText>
-          <Select name="Category" onChange={handleFilters}>
-            <Option disabled selected></Option>
-            <Option>Oils</Option>
-            <Option>Teas</Option>
-            <Option>Skin Care</Option>
-            <Option>Hand Made</Option>
-          </Select>
-        </Filter>
-
         <Filter>
           <FilterText>Sort Products</FilterText>
           <Select onChange={(e) => setSort(e.target.value)}>
@@ -79,7 +60,7 @@ export const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products category={category} filters={filters} sort={sort} />
+      <Products category={category}  sort={sort} />
       <Newsletter />
 
       <Footer />
