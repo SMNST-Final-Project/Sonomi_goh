@@ -20,10 +20,10 @@ import { Collections } from '@mui/icons-material';
 const Container = styled.div`
   height: 80px;
   background-color: #ebe2e2;
+  
 `;
 const Wrapper = styled.div`
   padding: 20px 40px;
-  color: snow;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +56,7 @@ export const Drawer = () => {
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
+     
     >
       <List>
         {['Categories', 'Special', 'Articles', 'Most Popular'].map((text, index) => (
@@ -91,7 +92,13 @@ export const Drawer = () => {
     <div >
       {['Teas', 'Oils', 'Skincare', 'Gifts'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+
+          {/**button styling */}
+          <Button 
+          onClick={toggleDrawer(anchor, true)} 
+          style={{color: "#696565" ,fontSize: "25px", fontWeight:"bold", marginLeft:"20px" }}
+          
+          >{anchor}</Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}

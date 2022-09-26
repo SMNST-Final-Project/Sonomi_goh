@@ -5,11 +5,22 @@ import { Footer } from "../../components/Footer/Footer";
 import styled from "styled-components";
 import "./index.css";
 import { Announcement } from "../Announcement/Announcement";
-import logo from "../../assets/videoBg/9.png"
+import { Link } from "react-router-dom";
+import Sonomi from "../../assets/videoBg/9.png"
+import { TeamCard } from "./TeamCard";
 
 const Container = styled.div`
   background: #ebe2e2;
 `
+const Logo = styled.div`
+  flex: 1;
+  color: black;
+  cursor: pointer;
+ margin-left: 20px;
+ width: 100px;
+  height: 120px;
+ `;
+
 const Hr = styled.hr`
   background-color: #5f5f5f;
   border: none;
@@ -19,9 +30,14 @@ const Hr = styled.hr`
 export const Team = () => {
   return (
     <Container>
-   <div>
-    <img src={logo} alt={logo} width="150px" height="150px" />
-    </div>  
+  {/**Logo */}
+  <Logo>
+            <Link
+              to="/home"
+            >
+              <img src={Sonomi} alt="" width="130px" height="130px" />
+            </Link>
+          </Logo>
         
       <div className="main">
         <div className="overlay"></div>
@@ -33,7 +49,16 @@ export const Team = () => {
           <h1>Our Own Team Page</h1>
           <p>Welcome</p>
         </div>
-      </div>
+      
+         </div>
+      <Hr/>
+
+      <section className='team padding'>
+        <div className='team grid'>
+          <TeamCard />
+        </div>
+        </section>
+        
       <Hr/>
       <Footer />
       <Announcement/>

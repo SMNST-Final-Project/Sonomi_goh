@@ -84,6 +84,33 @@ export const sliderItems = [
       categories:"skin"
     },
   ];
+  export const team = [
+    {
+      cover: "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FydG9vbiUyMGNoYXJhY3RlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      name: "Mehmet Ali",
+      work: "Full Stack Web Developer",
+    },
+    {
+      cover: "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FydG9vbiUyMGNoYXJhY3RlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      name: "Sadaf",
+      work: "Full Stack Web Developer",
+    },
+    {
+      cover: "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FydG9vbiUyMGNoYXJhY3RlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      name: "Thiago",
+      work: "Full Stack Web Developer",
+    },
+    {
+      cover: "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FydG9vbiUyMGNoYXJhY3RlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      name: "Nur Nubi",
+      work: "Full Stack Web Developer",
+    },
+    {
+      cover: "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FydG9vbiUyMGNoYXJhY3RlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      name: "Shadi Maqsood",
+      work: "Full Stack Web Developer",
+    },
+  ]
 
   export const data = [
     {

@@ -8,6 +8,9 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Sonomi from "../../assets/videoBg/9.png"
 
+// redux
+import { useSelector } from 'react-redux'
+
 const Container = styled.div`
   height: 80px;
   background-color: #ebe2e2;
@@ -60,6 +63,8 @@ const MenuItem = styled.div`
 `;
 
 export const Navbar = () => {
+  const quantity = useSelector(state => state.cart.quantity); 
+
   return (
     <>
       <Container>
@@ -120,7 +125,9 @@ export const Navbar = () => {
             <HowToRegRoundedIcon />
           </Button>
           <MenuItem>
-            <Badge badgeContent={1} component={Link}
+          
+          {/**redux added */}
+            <Badge badgeContent={quantity} component={Link}
             to={"/cart"}>
               <ShoppingCartOutlined style={{ color: "gray" }} />
             </Badge>

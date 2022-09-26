@@ -6,7 +6,8 @@ import { Footer } from "../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
 import ShoppingBasket from "@mui/icons-material/ShoppingBasket";
-//import { useState } from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Announcement } from "../components/Announcement/Announcement";
 
 const Container = styled.div``;
@@ -162,7 +163,12 @@ const Button = styled.button`
 `;
 
 export const Cart = () => {
-  
+  const [ stripeToken, setStripeToken ] = useState(null); 
+  const cart = useSelector(state => state.cart); 
+
+  const onToken = (token) => {
+    setStripeToken(token); 
+  }
 
   return (
     <Container>
@@ -226,12 +232,13 @@ export const Cart = () => {
             ))}
             <Hr />
           </Info> */}
+
           {/**Order Summery */}
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>Є 170</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -243,7 +250,7 @@ export const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>Є 170 </SummaryItemPrice>
+              <SummaryItemPrice>{cart.total} </SummaryItemPrice>
             </SummaryItem>
 
             {/**Second button */}
