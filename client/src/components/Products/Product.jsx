@@ -74,19 +74,19 @@ const Product = ({ item }) => {
       <Container>
         <Circle />
         <Image src={item.img} />
-        <Info>
-          <Icon>
-            <ShoppingCartCheckoutOutlined />
-          </Icon>
-          <Icon>
-            <Link to={`/products/${item._id}`}>
+        <Link to={`/products/${item._id}`}>
+          <Info>
+            <Icon>
+              <ShoppingCartCheckoutOutlined />
+            </Icon>
+            <Icon>
               <Search />
-            </Link>
-          </Icon>
-          <Icon>
-            <FavoriteBorder />
-          </Icon>
-        </Info>
+            </Icon>
+            <Icon>
+              <FavoriteBorder />
+            </Icon>
+          </Info>
+        </Link>
       </Container>
     </>
   );

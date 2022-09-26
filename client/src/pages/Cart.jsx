@@ -10,6 +10,8 @@ import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect } from "react";
 import { userRequest } from "../requestMethods.js";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addProduct, removeProduct } from "../redux/cartRedux.js";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -94,7 +96,6 @@ const ProductColor = styled.div`
   background-color: ${(props) => props.color};
 `;
 
-
 const PriceDetail = styled.div`
   flex: 1;
   display: flex;
@@ -167,7 +168,10 @@ const Button = styled.button`
 export const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onToken = (token) => {
     setStripeToken(token);
@@ -191,14 +195,25 @@ export const Cart = () => {
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, navigate]);
 
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      dispatch(removeProduct({ ...product, quantity }));
+    } else {
+      dispatch(addProduct({ ...product, quantity}));
+    }
+  };
+  // const handleClick = () => {
+  //   dispatch(removeProduct({ ...product, quantity }));
+  // };
+
   return (
     <Container>
       <Navbar />
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-        <Link to={"/products"} component={Link}>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <Link to={"/products"} component={Link}>
+            <TopButton>CONTINUE SHOPPING</TopButton>
           </Link>
           <TopTexts>
             <TopText>Your Wishlist (0)</TopText>
@@ -221,16 +236,15 @@ export const Cart = () => {
                       <b>Product:</b> {product.title}
                     </ProductName>
                     <ProductId>
-                      <b>ID:</b> {product._id}
+                      <b>Category:</b> {product.categories}
                     </ProductId>
-                    <ProductColor color={product.color} />
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add />
+                    <Add onClick={() => handleQuantity("inc")} />
                     <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove />
+                    <Remove onClick={() => handleQuantity("dec")} />
                   </ProductAmountContainer>
                   <ProductPrice>
                     $ {product.price * product.quantity}
@@ -245,7 +259,7 @@ export const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice></SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -257,7 +271,7 @@ export const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>Є 170 </SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total} </SummaryItemPrice>
             </SummaryItem>
 
             {/**Second button */}

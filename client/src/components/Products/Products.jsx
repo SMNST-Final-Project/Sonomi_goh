@@ -10,9 +10,8 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-export const Products = ({ category, filters }) => {
+export const Products = ({ category }) => {
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -34,21 +33,10 @@ export const Products = ({ category, filters }) => {
     getProducts();
   }, [category]);
 
-  useEffect(() => {
-    category &&
-      setFilteredProducts(
-        products.filter((item) =>
-          Object.entries(filters).every(([key, value]) =>
-            item[key].includes(value)
-          )
-        )
-      );
-  }, [products, category, filters]);
-
   return (
     <Container>
       {category
-        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
+        ? products.map((item) => <Product item={item} key={item.id} />)
         : products
             .slice(0, 8)
             .map((item) => <Product item={item} key={item.id} />)}
