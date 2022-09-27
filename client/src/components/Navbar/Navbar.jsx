@@ -6,20 +6,23 @@ import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
 import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import Sonomi from "../../assets/videoBg/9.png"
+import { mobile } from "../../responsive.js";
+import Sonomi from "../../assets/videoBg/9.png";
 
 // redux
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 
 const Container = styled.div`
   height: 80px;
   background-color: #ebe2e2;
+  ${mobile({ height: "50px" })}
 `;
 const Wrapper = styled.div`
   padding: 20px 40px;
   color: snow;
   display: flex;
   justify-content: space-between;
+  ${mobile({ padding: "10px 0px" })}
 `;
 const Logo = styled.div`
   flex: 1;
@@ -28,7 +31,6 @@ const Logo = styled.div`
   width: 100px;
   height: 100px;
 `;
-
 
 const SearchContainer = styled.div`
   border: 0.5px solid lightGray;
@@ -43,6 +45,7 @@ const SearchContainer = styled.div`
 `;
 const Input = styled.input`
   border: none;
+  ${mobile({ width: "50px" })}
 `;
 /*const Team = styled.div`
   flex: 1;
@@ -59,7 +62,7 @@ const MenuItem = styled.div`
 `;
 
 export const Navbar = () => {
-  const quantity = useSelector(state => state.cart.quantity); 
+  const quantity = useSelector((state) => state.cart.quantity);
 
   return (
     <>
@@ -67,20 +70,54 @@ export const Navbar = () => {
         <Wrapper>
           {/**Logo */}
           <Logo>
-            <Link
-              to="/home"
-            >
+            <Link to="/home">
               <img src={Sonomi} alt="" width="150px" height="150px" />
             </Link>
           </Logo>
           {/**Search Bar */}
           <SearchContainer>
-            
             <SearchIcon
               style={{ color: "black", marginRight: "5px", fontSize: 20 }}
             />
             <Input />
           </SearchContainer>
+
+          {/**Tea Category */}
+          <Button
+            variant="text"
+            component={Link}
+            to={"/products?category=stress"}
+            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
+          >
+            Teas
+          </Button>
+          {/**Oil Category */}
+          <Button
+            variant="text"
+            component={Link}
+            to={"/products?category=pain"}
+            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
+          >
+            Oils
+          </Button>
+          {/**Breakfast Category */}
+          <Button
+            variant="text"
+            component={Link}
+            to={"/products?category=breakfast"}
+            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
+          >
+            Breakfast
+          </Button>
+          {/**Skin Care Category */}
+          <Button
+            variant="text"
+            component={Link}
+            to={"/products?category=skin"}
+            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
+          >
+            Skin Care
+          </Button>
 
           {/**Team Link */}
           <Button
@@ -106,25 +143,23 @@ export const Navbar = () => {
 
           {/**Register button---MUI component  */}
           <Button
-          size="small"
+            size="small"
             component={Link}
             to={"/signup"}
             variant="text"
             style={{
               color: "gray",
               cursor: "pointer",
-              padding:"1px",
-              margin:"1px"
+              padding: "1px",
+              margin: "1px",
             }}
           >
             Register
             <HowToRegRoundedIcon />
           </Button>
           <MenuItem>
-
-          {/**redux added */}
-            <Badge badgeContent={quantity} component={Link}
-            to={"/cart"}>
+            {/**redux added */}
+            <Badge badgeContent={quantity} component={Link} to={"/cart"}>
               <ShoppingCartOutlined style={{ color: "gray" }} />
             </Badge>
           </MenuItem>
@@ -133,5 +168,3 @@ export const Navbar = () => {
     </>
   );
 };
-
-

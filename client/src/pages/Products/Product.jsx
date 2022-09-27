@@ -6,7 +6,6 @@ import { Announcement } from "../../components/Announcement/Announcement";
 import { Footer } from "../../components/Footer/Footer";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Newsletter } from "../../components/Newsletter/Newsletter";
-import { Drawer } from "../../components/Drawer/Drawer";
 import { mobile } from "../../responsive";
 import axios from "axios";
 import { addProduct } from "../../redux/cartSlice";
@@ -28,7 +27,7 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
-  ${mobile({ height: "45vh" })}
+  ${mobile({ height: "40vh" })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
@@ -49,16 +48,15 @@ const Price = styled.span`
 `;
 
 const TextContainer = styled.div`
-background-color: teal;
+  background-color: teal;
   width: 50%;
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
   ${mobile({ width: "100%" })}
 `;
-const TextInstructions = styled.div``
-const TextIngredients = styled.div``
-
+const TextInstructions = styled.div``;
+const TextIngredients = styled.div``;
 
 const AddContainer = styled.div`
   width: 50%;
@@ -98,24 +96,21 @@ const Button = styled.button`
 export const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  console.log(id)
+  console.log(id);
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
-  const dispatch = useDispatch(); 
-
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/products/${id}`,
-        {
+        const res = await axios.get(`http://localhost:5000/products/${id}`, {
           headers: {
-            "authorization": `Bearer ${localStorage.getItem("token")}`,
+            authorization: `Bearer ${localStorage.getItem("token")}`,
           },
-        }
-        );
+        });
         console.log("item id", id);
-         setProduct(res.data);
+        setProduct(res.data);
       } catch (error) {
         console.log(error.message);
       }
@@ -134,33 +129,25 @@ export const Product = () => {
   //dispatch
 
   const handleProductClick = () => {
-    dispatch(addProduct({ ...product, quantity }))
-    
-  }
+    dispatch(addProduct({ ...product, quantity }));
+  };
 
   return (
     <Container>
       <Navbar />
-     <Drawer/> 
       <h3>Single Product page</h3>
-{console.log("product",product)}
+      {console.log("product", product)}
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
           <Title>{product.title}</Title>
-          <Desc>
-          {product.description}
-          </Desc>
+          <Desc>{product.description}</Desc>
           <Price> Є {product.price}</Price>
           <TextContainer>
-          <TextIngredients>
-              {product.ingredients}
-            </TextIngredients>
-            <TextInstructions>
-              {product.instructions}
-            </TextInstructions>
+            <TextIngredients>{product.ingredients}</TextIngredients>
+            <TextInstructions>{product.instructions}</TextInstructions>
           </TextContainer>
           <AddContainer>
             <AmountContainer>

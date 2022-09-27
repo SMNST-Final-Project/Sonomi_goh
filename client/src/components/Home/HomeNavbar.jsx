@@ -1,24 +1,22 @@
-import styled from 'styled-components'
-import { Badge } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import { Diversity3Outlined, ShoppingCartOutlined} from '@mui/icons-material';
-import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
-import Person3OutlinedIcon from '@mui/icons-material/Person3Outlined';
-import Button from '@mui/material/Button';
+import styled from "styled-components";
+import { Badge } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import { Diversity3Outlined, ShoppingCartOutlined } from "@mui/icons-material";
+import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
+import Person3OutlinedIcon from "@mui/icons-material/Person3Outlined";
+import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import Sonomi from "../../assets/videoBg/9.png"
-
+import Sonomi from "../../assets/videoBg/9.png";
 
 const Container = styled.div`
-    height: 80px;
-    background-color: #ebe2e2;
-
-`
+  height: 80px;
+  background-color: #ebe2e2;
+`;
 const Wrapper = styled.div`
-    padding: 20px 40px;
-    color: snow;
-    display: flex;
-    justify-content: space-between;
+  padding: 20px 40px;
+  color: snow;
+  display: flex;
+  justify-content: space-between;
 `;
 const Logo = styled.div`
   flex: 1;
@@ -27,8 +25,6 @@ const Logo = styled.div`
   width: 100px;
   height: 100px;
 `;
-
-
 
 const SearchContainer = styled.div`
   border: 0.5px solid lightGray;
@@ -60,30 +56,28 @@ const MenuItem = styled.div`
 
 export const HomeNavbar = () => {
   return (
-   <>
-    <Container>
-       <Wrapper>
+    <>
+      <Container>
+        <Wrapper>
           {/**Logo */}
           <Logo>
-            <Link
-              to="/home"
-            >
+            <Link to="/home">
               <img src={Sonomi} alt="" width="150px" height="150px" />
             </Link>
           </Logo>
 
-
-         {/**Search Bar */}
-        <SearchContainer >
-          
-            <SearchIcon 
-            style={{ color: "black",marginLeft:"5px", fontSize: 20 }} />
+          {/**Search Bar */}
+          <SearchContainer>
+            <SearchIcon
+              style={{ color: "black", marginLeft: "5px", fontSize: 20 }}
+            />
             <Input />
           </SearchContainer>
 
+         
 
-        {/**Team Link */}
-        <Button
+          {/**Team Link */}
+          <Button
             variant="text"
             component={Link}
             to={"/team"}
@@ -93,34 +87,41 @@ export const HomeNavbar = () => {
             <Diversity3Outlined />
           </Button>
 
-            {/**Login button */}
-        <Button variant="text" 
-        component={Link} 
-        to={"/login"}
-        style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}>Log In<LoginRoundedIcon />
-        </Button>
+          {/**Login button */}
+          <Button
+            variant="text"
+            component={Link}
+            to={"/login"}
+            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
+          >
+            Log In
+            <LoginRoundedIcon />
+          </Button>
 
-         {/**User Profile */}
+          {/**User Profile */}
 
-        <Button 
-        component={Link} 
-        to={"/userprofile"} 
-        variant="text" 
-        style={{color: "black", 
-        
-        cursor:"pointer", 
-        borderRadius:"40% 40%"}}>User<Person3OutlinedIcon /></Button>
+          <Button
+            component={Link}
+            to={"/userprofile"}
+            variant="text"
+            style={{
+              color: "black",
 
+              cursor: "pointer",
+              borderRadius: "40% 40%",
+            }}
+          >
+            User
+            <Person3OutlinedIcon />
+          </Button>
 
-        <MenuItem>
-            <Badge badgeContent={1} component={Link}
-            to={"/cart"}>
+          <MenuItem>
+            <Badge badgeContent={1} component={Link} to={"/cart"}>
               <ShoppingCartOutlined style={{ color: "gray" }} />
             </Badge>
           </MenuItem>
-        </Wrapper> 
-    </Container>
-  
-    </> 
-  )
-}
+        </Wrapper>
+      </Container>
+    </>
+  );
+};

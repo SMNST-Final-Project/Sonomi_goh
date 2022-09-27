@@ -1,7 +1,6 @@
 import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
 import { Navbar } from "../components/Navbar/Navbar";
-import { Drawer } from "../components/Drawer/Drawer";
 import { Footer } from "../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
@@ -91,8 +90,6 @@ const ProductColor = styled.div`
   background-color: ${(props) => props.color};
 `;
 
-
-
 const PriceDetail = styled.div`
   flex: 1;
   display: flex;
@@ -163,36 +160,32 @@ const Button = styled.button`
 `;
 
 export const Cart = () => {
-  const [ stripeToken, setStripeToken ] = useState(null); 
-  const cart = useSelector(state => state.cart); 
+  const [stripeToken, setStripeToken] = useState(null);
+  const cart = useSelector((state) => state.cart);
 
   const onToken = (token) => {
-    setStripeToken(token); 
-  }
+    setStripeToken(token);
+  };
 
   return (
     <Container>
       <Navbar />
-     <Drawer/> 
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
           {/**continue shopping---styled component*/}
-          
-         <Link to={"/productlist"}
-              component={Link}> 
-          <TopButton>
-            CONTINUE SHOPPING
-            </TopButton>
-            </Link>
+
+          <Link to={"/productlist"} component={Link}>
+            <TopButton>CONTINUE SHOPPING</TopButton>
+          </Link>
           <TopTexts>
             <TopText>
               <ShoppingBasket />
               (2)
-              </TopText>
+            </TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          
+
           {/**Top button */}
           <Link to={"/pay"} component={Link}>
             <TopButton>CHECKOUT NOW</TopButton>
@@ -200,7 +193,7 @@ export const Cart = () => {
         </Top>
         <Hr />
         <Bottom>
-           <Info>
+          <Info>
             {cart.products.map((product) => (
               <Product>
                 <ProductDetail>
@@ -212,8 +205,6 @@ export const Cart = () => {
                     <ProductId>
                       <b>Categories</b> {product.categories}
                     </ProductId>
-                    
-                   
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
@@ -229,7 +220,7 @@ export const Cart = () => {
               </Product>
             ))}
             <Hr />
-          </Info> 
+          </Info>
 
           {/**Order Summery */}
           <Summary>
@@ -252,20 +243,15 @@ export const Cart = () => {
             </SummaryItem>
 
             {/**Second button */}
-            <Link  to={"/pay"}
-              component={Link}
-            >
-            <Button> 
-            CHECKOUT NOW
-           </Button>
+            <Link to={"/pay"} component={Link}>
+              <Button>CHECKOUT NOW</Button>
             </Link>
-
           </Summary>
         </Bottom>
       </Wrapper>
       <Hr style={{ marginBottom: "150px" }} />
       <Footer />
-     <Announcement/> 
+      <Announcement />
     </Container>
   );
 };
