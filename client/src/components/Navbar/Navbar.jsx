@@ -62,7 +62,7 @@ const MenuItem = styled.div`
 `;
 
 export const Navbar = () => {
-  const quantity = useSelector((state) => state.cart.quantity);
+  const quantity = useSelector((state) => state.cart.cartTotalQuantity);
 
   return (
     <>
@@ -86,7 +86,7 @@ export const Navbar = () => {
           <Button
             variant="text"
             component={Link}
-            to={"/products?category=stress"}
+            to={"/products?category=tea"}
             style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
           >
             Teas
@@ -95,7 +95,7 @@ export const Navbar = () => {
           <Button
             variant="text"
             component={Link}
-            to={"/products?category=pain"}
+            to={"/products?category=oil"}
             style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
           >
             Oils
@@ -104,7 +104,7 @@ export const Navbar = () => {
           <Button
             variant="text"
             component={Link}
-            to={"/products?category=breakfast"}
+            to={"/products?category=food"}
             style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
           >
             Breakfast
@@ -113,7 +113,7 @@ export const Navbar = () => {
           <Button
             variant="text"
             component={Link}
-            to={"/products?category=skin"}
+            to={"/products?category=natural"}
             style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
           >
             Skin Care
