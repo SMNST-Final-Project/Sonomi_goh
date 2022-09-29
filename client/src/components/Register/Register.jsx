@@ -10,6 +10,7 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -46,6 +47,7 @@ const Register = () => {
     console.log(e.target.name, e.target.value);
     setUser({ ...user, [e.target.name]: e.target.value });
   };
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -57,6 +59,7 @@ const Register = () => {
       })
       .then((res) => {
         console.log(res);
+        navigate("/login");
       })
       .catch((err) => {
         console.log(err.message);
