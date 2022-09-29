@@ -10,6 +10,7 @@ import { Product } from "./pages/Products/Product";
 import { ProductList } from "./pages/Products/ProductList";
 import { Pay } from "./components/Pay/Pay";
 import { Success } from "./components/Pay/Success";
+import { TermsConditions } from "./components/TermsConditions/TermsConditions";
 
 const App = () => {
   return (
@@ -35,6 +36,9 @@ const App = () => {
 
         {/**User Profile component */}
         <Route path="/userprofile" element={<UserProfile />} />
+
+        {/**Terms and conditions */}
+        <Route path="/term" element={<TermsConditions />} />
       </Routes>
     </>
   );

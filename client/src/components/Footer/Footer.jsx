@@ -8,6 +8,7 @@ import {
 } from "@mui/icons-material";
 import styled from "styled-components";
 import { mobile } from "../../responsive.js";
+import { Link } from "react-router-dom"
 
 const Container = styled.div`
   display: flex;
@@ -57,10 +58,14 @@ const List = styled.h3`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  
 `;
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  
 `;
 
 //Right
@@ -83,7 +88,7 @@ export const Footer = () => {
     <Container>
       {/**Left side of the footer */}
       <Left>
-        <Logo>Our LOGO</Logo>
+        <Logo>SONOMI, garden of hope</Logo>
         <Desc>
           Choose from over 75 tea blends – from the classic Earl Grey to the
           award-winning Blueberry Merlot – our whole leaf teas are available in
@@ -106,16 +111,16 @@ export const Footer = () => {
       <Center>
         <Title>Useful Links</Title>
         <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>My Blog</ListItem>
-          <ListItem>Other Creators</ListItem>
-          <ListItem>Helpful Resources</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>WhishList</ListItem>
-          <ListItem>Privacy Policy</ListItem>
-          <ListItem>Terms & Conditions</ListItem>
+        
+          <ListItem><Link to="/home"> Home</Link></ListItem> 
+          
+          <ListItem><Link to="/cart">Cart</Link></ListItem>
+          <ListItem><Link to="/products">Products</Link></ListItem>
+          <ListItem><Link to="/">Helpful Resources</Link></ListItem>
+          <ListItem><Link to="/login">My Account</Link></ListItem>
+          <ListItem><Link to="/cart">Order Tracking</Link></ListItem>
+          <ListItem><Link to="/pay">Payment Methods</Link></ListItem>
+          <ListItem><Link to="/term">Terms & Conditions</Link></ListItem>
         </List>
       </Center>
 
