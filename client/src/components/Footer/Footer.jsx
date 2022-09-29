@@ -21,7 +21,9 @@ const Left = styled.div`
   flex-direction: column;
   padding: 20px;
 `;
-const Logo = styled.h1``;
+const Logo = styled.h1`
+cursor: pointer;
+`;
 
 const Desc = styled.p`
   margin: 20px 0px;
@@ -40,6 +42,7 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
 //Center
@@ -67,6 +70,8 @@ const ListItem = styled.li`
   text-decoration: none;
   
 `;
+//Link Styles
+const linkStyling = {textDecoration:"none", color:"black"}
 
 //Right
 const Right = styled.div`
@@ -111,16 +116,16 @@ export const Footer = () => {
       <Center>
         <Title>Useful Links</Title>
         <List>
-        
-          <ListItem><Link to="/home"> Home</Link></ListItem> 
+        <ListItem><Link to="/home" style={linkStyling}> Home</Link></ListItem> 
           
-          <ListItem><Link to="/cart">Cart</Link></ListItem>
-          <ListItem><Link to="/products">Products</Link></ListItem>
-          <ListItem><Link to="/">Helpful Resources</Link></ListItem>
-          <ListItem><Link to="/login">My Account</Link></ListItem>
-          <ListItem><Link to="/cart">Order Tracking</Link></ListItem>
-          <ListItem><Link to="/pay">Payment Methods</Link></ListItem>
-          <ListItem><Link to="/term">Terms & Conditions</Link></ListItem>
+          <ListItem><Link to="/cart" style={linkStyling}>Cart</Link></ListItem>
+          <ListItem><Link to="/products" style={linkStyling}>Products</Link></ListItem>
+          <ListItem><Link to="/" style={linkStyling}>Helpful Resources</Link></ListItem>
+          <ListItem><Link to="/login" style={linkStyling}>My Account</Link></ListItem>
+          <ListItem><Link to="/cart" style={linkStyling}>Order Tracking</Link></ListItem>
+          <ListItem><Link to="/pay" style={linkStyling}>Payment Methods</Link></ListItem>
+          <ListItem><Link to="/term" style={linkStyling}>Terms & Conditions</Link></ListItem>
+          
         </List>
       </Center>
 
