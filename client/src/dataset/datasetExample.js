@@ -69,19 +69,25 @@ export const sliderItems = [
       id: 1,
       img: "https://images.unsplash.com/photo-1557043728-3edef94d093b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODJ8fG9yZ2FuaWMlMjBtZWRpY2VufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
       title: "Organic Products",
-      categories:"stress"
+      categories:"tea"
     },
     {
       id: 2,
       img: "https://images.unsplash.com/photo-1556767284-fd0dbf421a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTM2fHxwYWluJTIwcmVsaWV2ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
       title: "Pain Relieve",
-      categories:"pain"
+      categories:"oil"
     },
     {
       id: 3,
       img: "https://images.unsplash.com/photo-1563660322566-e9bc3441b70c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGNiZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
       title: "Skin Care",
-      categories:"skin"
+      categories:"natural"
+    },
+    {
+      id: 4,
+      img: "https://images.unsplash.com/photo-1563660322566-e9bc3441b70c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGNiZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      title: "Breakfast",
+      categories:"food"
     },
   ];
   export const team = [

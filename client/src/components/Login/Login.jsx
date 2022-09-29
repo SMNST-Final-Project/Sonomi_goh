@@ -59,6 +59,7 @@ const Login = () => {
       .then((res) => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
+        navigate("/home");
       })
       .catch((err) => {
         console.log(err.message);

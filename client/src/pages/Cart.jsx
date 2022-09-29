@@ -5,9 +5,16 @@ import { Footer } from "../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
 import ShoppingBasket from "@mui/icons-material/ShoppingBasket";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Announcement } from "../components/Announcement/Announcement";
+import {
+  addProduct,
+  removeProduct,
+  clearCart,
+  decreaseProduct,
+  getTotals,
+} from "../redux/cartSlice";
 
 const Container = styled.div``;
 
@@ -162,7 +169,24 @@ const Button = styled.button`
 export const Cart = () => {
   const [stripeToken, setStripeToken] = useState(null);
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart, dispatch]);
+
+  const handleAddProduct = (product) => {
+    dispatch(addProduct(product));
+  };
+  const handleDecreaseProduct= (product) => {
+    dispatch(decreaseProduct(product));
+  };
+  const handleRemoveProduct = (product) => {
+    dispatch(removeProduct(product));
+  };
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
   const onToken = (token) => {
     setStripeToken(token);
   };
@@ -187,9 +211,8 @@ export const Cart = () => {
           </TopTexts>
 
           {/**Top button */}
-          <Link to={"/pay"} component={Link}>
-            <TopButton>CHECKOUT NOW</TopButton>
-          </Link>
+
+          <TopButton onClick={() => handleClearCart()}>CLEAR CART</TopButton>
         </Top>
         <Hr />
         <Bottom>
@@ -209,9 +232,9 @@ export const Cart = () => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add />
-                    <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove />
+                    <Add onClick={() => handleAddProduct(product)} />
+                    <ProductAmount>{product.cartQuantity}</ProductAmount>
+                    <Remove onClick={() => handleDecreaseProduct(product)} />
                   </ProductAmountContainer>
                   <ProductPrice>
                     $ {product.price * product.quantity}
@@ -227,7 +250,7 @@ export const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>{cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>{cart.cartTotalAmount}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -239,7 +262,7 @@ export const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>{cart.total} </SummaryItemPrice>
+              <SummaryItemPrice>{cart.cartTotalAmount} </SummaryItemPrice>
             </SummaryItem>
 
             {/**Second button */}
