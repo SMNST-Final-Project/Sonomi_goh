@@ -57,9 +57,9 @@ userSchema.pre('save', { document: true, query: false }, async function (next) {
 });
 
 // bcrypt compare method assigned to userSchema
-userSchema.methods.comparePassword = function (candidatePassword, callback) {
+ userSchema.methods.comparePassword = function (candidatePassword, callback) {
   const user = this;
   return callback(null, bcrypt.compareSync(candidatePassword, user.password)); 
-}
+} 
 
 export default mongoose.model('User', userSchema);
