@@ -46,7 +46,7 @@ export const ProductList = () => {
   return (
     <Container>
       <Navbar />
-      <h3>This is Product List Page</h3>
+      
       <Title>{category}</Title>
       <FilterContainer>
         <Filter>

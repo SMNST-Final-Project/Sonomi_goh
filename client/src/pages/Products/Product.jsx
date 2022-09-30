@@ -135,8 +135,7 @@ export const Product = () => {
   return (
     <Container>
       <Navbar />
-      <h3>Single Product page</h3>
-      {console.log("product", product)}
+      
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />

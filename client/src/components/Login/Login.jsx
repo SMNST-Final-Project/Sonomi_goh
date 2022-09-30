@@ -96,7 +96,7 @@ const Login = () => {
           <TextField
             style={{ marginBottom: "5px" }}
             margin="dense"
-            label="Username"
+            label="Email"
             placeholder="Enter your name here"
             onChange={changeHandler}
             name="email"
