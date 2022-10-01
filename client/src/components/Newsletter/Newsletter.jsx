@@ -42,7 +42,7 @@ padding-left: 20px;
 const Button = styled.button`
 flex:1;
 border: none;
-background-color: #9d9a9a;
+background-color: #696565;
 color: white;
 
 `

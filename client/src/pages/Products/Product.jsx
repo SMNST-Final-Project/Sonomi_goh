@@ -48,9 +48,9 @@ const Price = styled.span`
 `;
 
 const TextContainer = styled.div`
-  background-color: teal;
   width: 50%;
   margin: 30px 0px;
+
   display: flex;
   justify-content: space-between;
   ${mobile({ width: "100%" })}
@@ -145,7 +145,7 @@ export const Product = () => {
           <Desc>{product.description}</Desc>
           <Price> Є {product.price}</Price>
           <TextContainer>
-            <TextIngredients>{product.ingredients}</TextIngredients>
+            <TextIngredients>Ingredients: {product.ingredients}</TextIngredients>
             <TextInstructions>{product.instructions}</TextInstructions>
           </TextContainer>
           <AddContainer>
