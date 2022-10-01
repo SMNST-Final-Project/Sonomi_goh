@@ -11,6 +11,7 @@ import Sonomi from "../../assets/videoBg/9.png";
 
 // redux
 import { useSelector } from "react-redux";
+import { SubNav } from "./SubNav.jsx";
 
 const Container = styled.div`
   height: 80px;
@@ -30,6 +31,7 @@ const Logo = styled.div`
   cursor: pointer;
   width: 100px;
   height: 100px;
+  z-index: 1;
 `;
 
 const SearchContainer = styled.div`
@@ -82,43 +84,6 @@ export const Navbar = () => {
             <Input />
           </SearchContainer>
 
-          {/**Tea Category */}
-          <Button
-            variant="text"
-            component={Link}
-            to={"/products?category=tea"}
-            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
-          >
-            Teas
-          </Button>
-          {/**Oil Category */}
-          <Button
-            variant="text"
-            component={Link}
-            to={"/products?category=oil"}
-            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
-          >
-            Oils
-          </Button>
-          {/**Breakfast Category */}
-          <Button
-            variant="text"
-            component={Link}
-            to={"/products?category=food"}
-            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
-          >
-            Breakfast
-          </Button>
-          {/**Skin Care Category */}
-          <Button
-            variant="text"
-            component={Link}
-            to={"/products?category=natural"}
-            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
-          >
-            Skin Care
-          </Button>
-
           {/**Team Link */}
           <Button
             variant="text"
@@ -165,6 +130,7 @@ export const Navbar = () => {
           </MenuItem>
         </Wrapper>
       </Container>
+      <SubNav/>
     </>
   );
 };

@@ -24,6 +24,7 @@ const Logo = styled.div`
   cursor: pointer;
   width: 100px;
   height: 100px;
+  z-index: 1;
 `;
 
 const SearchContainer = styled.div`
