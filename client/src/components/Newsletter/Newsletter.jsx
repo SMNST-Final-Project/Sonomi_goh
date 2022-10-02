@@ -16,6 +16,7 @@ flex-direction: column;
 const Title = styled.h1`
 font-size: 70px;
 margin-bottom: 20px;
+color:  #555151;
 `
 const Desc = styled.div`
 font-size: 24px;
@@ -44,6 +45,7 @@ flex:1;
 border: none;
 background-color: #696565;
 color: white;
+cursor: pointer;
 
 `
 
