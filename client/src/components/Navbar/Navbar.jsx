@@ -6,7 +6,7 @@ import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
 import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import { mobile } from "../../responsive.js";
+import { mobile, tablet } from "../../responsive.js";
 import Sonomi from "../../assets/videoBg/9.png";
 
 // redux
@@ -16,22 +16,23 @@ import { SubNav } from "./SubNav.jsx";
 const Container = styled.div`
   height: 80px;
   background-color: #ebe2e2;
-  ${mobile({ height: "50px" })}
+  ${mobile({ height: "40px" })}
 `;
 const Wrapper = styled.div`
   padding: 20px 40px;
-  color: snow;
+  
   display: flex;
   justify-content: space-between;
   ${mobile({ padding: "10px 0px" })}
 `;
 const Logo = styled.div`
   flex: 1;
-  color: black;
   cursor: pointer;
   width: 100px;
   height: 100px;
   z-index: 1;
+  ${mobile({ display: "none"})}
+  //${mobile({ height: "20px", width:"20px"})}
 `;
 
 const SearchContainer = styled.div`
@@ -40,27 +41,28 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 15px;
   margin-right: 25px;
-  padding: 1px;
+  padding: 10px;
   margin-bottom: 5px;
   border: none;
   cursor: pointer;
+
 `;
 const Input = styled.input`
   border: none;
   ${mobile({ width: "50px" })}
 `;
-/*const Team = styled.div`
+const Right = styled.div`
   flex: 1;
-  margin-left: 250px;
-  color: black;
-  cursor: pointer;
-  font-weight: 400;
-`;*/
-
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  ${mobile({ flex: 2, justifyContent: "center" })}
+`;
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 15px;
+  ${mobile({ fontSize: "12px", marginLeft: "10px"})}
 `;
 
 export const Navbar = () => {
@@ -81,9 +83,9 @@ export const Navbar = () => {
             <SearchIcon
               style={{ color: "black", marginRight: "5px", fontSize: 20 }}
             />
-            <Input />
+            <Input placeholder="search"/>
           </SearchContainer>
-
+          <Right>
           {/**Team Link */}
           <Button
             variant="text"
@@ -92,7 +94,7 @@ export const Navbar = () => {
             style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
           >
             Team
-            <Diversity3Outlined />
+            <Diversity3Outlined fontSize="small" />
           </Button>
 
           {/**Login button */}
@@ -103,7 +105,7 @@ export const Navbar = () => {
             style={{ color: "gray", marginLeft: "5px", fontSize: 15 }}
           >
             Log In
-            <LoginRoundedIcon />
+            <LoginRoundedIcon fontSize="small" />
           </Button>
 
           {/**Register button---MUI component  */}
@@ -120,7 +122,7 @@ export const Navbar = () => {
             }}
           >
             Register
-            <HowToRegRoundedIcon />
+            <HowToRegRoundedIcon fontSize="small"/>
           </Button>
           <MenuItem>
             {/**redux added */}
@@ -128,6 +130,7 @@ export const Navbar = () => {
               <ShoppingCartOutlined style={{ color: "gray" }} />
             </Badge>
           </MenuItem>
+          </Right>
         </Wrapper>
       </Container>
       <SubNav/>

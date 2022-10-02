@@ -18,8 +18,8 @@ export const sliderItems = [
   },
   {
       id: 3,
-      img: "https://images.unsplash.com/photo-1545840716-c82e9eec6930?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWx0ZXJuYXRpdmUlMjBtZWRpY2luZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
-      title: "Healing Is Possible",
+      img: "https://images.unsplash.com/photo-1564609602246-c5f886e25595?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzZ8fGhlcmJzJTIwYW4lMjBvaWxzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      title: "Natural Oil Healing",
       desc: "Energy Medicine--is defined as any energetic or informational interaction with a biological system to bring back homeostasis in the organism",
       bg: "fbf0f4",
   

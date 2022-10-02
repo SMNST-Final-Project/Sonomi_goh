@@ -2,18 +2,21 @@ import { Box, Button } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { mobile, tablet } from "../../responsive.js";
 
 //styled components
 const Container = styled.div`
   height: 80px;
   background-color: #ebe2e2;
-  margin-bottom: 20px;
-`;
+  margin-bottom: 5px;
+  
+  `
 const Wrapper = styled.div`
   padding: 20px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  ${mobile({ display: "none"})}
 `;
 
 export const SubNav = () => {
@@ -72,6 +75,7 @@ export const SubNav = () => {
               fontSize: "25px",
               fontWeight: "bold",
               marginLeft: "20px",
+              
             }}
           >
             Skin Care

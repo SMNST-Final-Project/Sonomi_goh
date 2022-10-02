@@ -5,7 +5,7 @@ import { css } from "styled-components";
 //for mobiles
 export const mobile = (props) => {
   return css`
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 380px) {
       ${props}
     }
   `;

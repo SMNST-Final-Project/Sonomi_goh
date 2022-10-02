@@ -66,10 +66,10 @@ const Login = () => {
       });
   };
   const paperStyle = {
-    padding: 20,
+    padding: 50,
     height: "70vh",
     width: 400,
-    margin: "70px auto",
+    margin: "50px auto",
   };
   const avatarStyle = {
     backgroundColor: "#9b8888",
@@ -84,8 +84,8 @@ const Login = () => {
    <>
     <Container>
       <Grid>
-     <h2>Welcome Back</h2> 
-        <Paper elevation={12} style={paperStyle}>
+     <h2 style={{marginLeft: "85px", fontSize:"40px", color:" #696565"}}>Welcome Back</h2> 
+        <Paper elevation={24} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
               <LockOutlinedIcon style={{fontSize:"25px"}} />

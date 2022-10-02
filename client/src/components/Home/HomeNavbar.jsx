@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { Badge } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { Diversity3Outlined, ShoppingCartOutlined } from "@mui/icons-material";
+import {AccountBoxOutlined, ShoppingCartOutlined } from "@mui/icons-material";
 import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
-import Person3OutlinedIcon from "@mui/icons-material/Person3Outlined";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Sonomi from "../../assets/videoBg/9.png";
@@ -81,11 +80,10 @@ export const HomeNavbar = () => {
           <Button
             variant="text"
             component={Link}
-            to={"/team"}
+            to={"/products"}
             style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
           >
-            Team
-            <Diversity3Outlined />
+            Products
           </Button>
 
           {/**Login button */}
@@ -106,14 +104,13 @@ export const HomeNavbar = () => {
             to={"/userprofile"}
             variant="text"
             style={{
-              color: "black",
-
+              color: "gray",
               cursor: "pointer",
-              borderRadius: "40% 40%",
+              borderRadius: "20% 20%",
             }}
           >
-            User
-            <Person3OutlinedIcon />
+            My Account
+            <AccountBoxOutlined />
           </Button>
 
           <MenuItem>

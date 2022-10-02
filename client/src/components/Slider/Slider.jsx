@@ -2,20 +2,22 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
 import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../../dataset/datasetExample";
+import {Link} from "react-router-dom"
+import Button from "@mui/material/Button";
 
 
 const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: #dfdfdf;
+  background-color:  #ebe2e2;
   position: relative;
   overflow: hidden;
 `;
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #fff7f7;
+  background-color: #ebe2e2;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -43,8 +45,15 @@ const Wrapper = styled.div`
 const Slide = styled.div`
 width: 100vw;
 height: 100vh;
+margin-top: 40px;
     display: flex;
     align-items: center;
+    border-top: 5px;
+    border-right: 15px;
+    border-left: 15px;
+    border-bottom: 10px;
+    border-style: solid;
+    border-color: #ebe2e2;
     background-color: #${(props) => props.bg};
 `;
 const ImgContainer = styled.div`
@@ -53,11 +62,12 @@ const ImgContainer = styled.div`
 `;
 const Image = styled.img`
     height: 80%;
+    margin-left:5px;
 `;
 
 const InfoContainer = styled.div`
 flex: 1;
-padding: 50px;
+padding: 30px;
 `;
 
 const Title = styled.h1`
@@ -70,14 +80,6 @@ font-size: 20px;
 font-weight: 500;
 letter-spacing: 3px;
 `;
-
-const Button = styled.button`
-padding: 10px;
-font-size: 20px;
-background-color: transparent;
-cursor: pointer;
-`;
-
 
 
 const Slider = () => {
@@ -108,7 +110,24 @@ if(direction === "left"){
       <InfoContainer>
        <Title>{item.title}</Title> 
        <Desc>{item.desc}</Desc> 
-       <Button>Find Out More</Button> 
+
+        <Button
+            variant="text"
+            component={Link}
+            to={"/home"}
+            style={{ 
+              color: "black",
+              backgroundColor: "transparent",
+              cursor: "pointer",
+              border:"1px solid black",
+              marginLeft: "5px",
+              fontSize: 20 }}
+          >
+            Find Out More
+           
+          </Button>
+
+
         </InfoContainer>
 
         </Slide> 
