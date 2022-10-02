@@ -49,6 +49,9 @@ const SearchContainer = styled.div`
 `;
 const Input = styled.input`
   border: none;
+  padding: 8px;
+  width:300px;
+
   ${mobile({ width: "50px" })}
 `;
 const Right = styled.div`
@@ -79,11 +82,11 @@ export const Navbar = () => {
             </Link>
           </Logo>
           {/**Search Bar */}
-          <SearchContainer>
+          <SearchContainer >
             <SearchIcon
               style={{ color: "black", marginRight: "5px", fontSize: 20 }}
             />
-            <Input placeholder="search"/>
+            <Input placeholder="search" />
           </SearchContainer>
           <Right>
           {/**Team Link */}

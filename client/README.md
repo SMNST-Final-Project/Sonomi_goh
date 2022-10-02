@@ -30,91 +30,108 @@ Our Darling Project "Sonomi, garden of hope" by all means shows our enthusiasm t
 
 One of our team member has floated this idea of working on an application where people not only can buy Natural, Holistic, Chemical free products but also it provides a place to be in a community of like minded people interacting and exchanging ideas.
 
+## Features
 
+The users are able to register an account, login, and browse through different Pages.
+The Pages are:
+- Landing Page
+- Home
+- Products Page
+- Single Product Page
+- Register Page
+- Login Page
+- Cart Page
+- Payment Page
+- Checkout Page
+- Team Page
 
+The users can add products to the cart and go through the checkout.
 
+<h2 align="center">Future Plans Of Sonomi</h2>
 
+Making SONOMI, more functional by adding:
+- Admins Dashboard
+- User Own Dashboard
+- Adding more functionality to the components
 
-
-
-
-
-
-
-
-
-
-
-
-## What is the idea?
-  - target users
-  - brief description (one paragraph)
-  - use cases
-  - What does it solve?
-  - ...
-
-## Design
-  - Color/Palette
-  - Layout
-  - Target Devices (mobile, desktop, ...)
-  - Mockups
-  - Wire frames
-  - Fonts
-  - ...
-
-## Structure and Software Architecture
-  - Fullstack
-    - Frontend
-    - Backend
-      - REST-API
-        - routes
-    - Database
-      - Seeding with dev/test data
-  - Data-Structure (potentially)
-  - flow charts
-  - ...
+<!-- TECHNOLOGIES -->
 
 ## Technologies
-  - foreign APIs
-  - special software packages/modules
-  - ...
+
+{
+  "name": "smnst-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/icons-material": "^5.10.2",
+    "@mui/material": "^5.10.2",
+    "@reduxjs/toolkit": "^1.8.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "react-stripe-checkout": "^2.6.3",
+    "stripe": "^10.8.0",
+    "styled-components": "^5.3.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "This is the React FrontEnd part of our Final group-project.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}
+
+<!-- TEAM -->
+
+## Team
+
+SONOMI Team,
+
+- [Mehmet Ali ](https://github.com/akayami001): Full Stack Web Developer
+- [Sadaf Qureshi](https://github.com/green2050): Full Stack Web Developer
+- [Thiago Souza](https://github.com/mistersouza): Full Stack Web Developer
+- [Nur Nobi Dulal](https://github.com/nndulal): Full Stack Web Developer
+- [Shadi Maqsoud](https://github.com/BananaJoe94): Full Stack Web Developer
 
 
-# A MERN STACK FULL Application
+<!-- LINKS -->
 
-**Description
+## Links
 
-This repository contains a project containing ReactJs Libraries. A series of ReactJs projects to learn React, Axios.
-
-
-### Libraries used
-* styled-components
-* axios
-* react-scripts
-* emoji-picker-react
-
-
-### 
-
-
-### Later
-* working on Design
-
-
-
-### LogIn
-#Basic button
-The Button comes with three variants: text (default), contained, and outlined.
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-
-
-## Material
-*Wrapped labels
-*Tabs
-*drawer
-*snackbar
-
-
-###Euro Є
+- [SONOMIBackend](https://github.com/SMNST-Final-Project/deployready/tree/main/server)
+- [Figma Design](https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161)
+- [Github Project Page](https://github.com/orgs/SMNST-Final-Project/projects/1/views/1?layout=board)
