@@ -58,10 +58,6 @@ Making SONOMI, more functional by adding:
 
 ## Technologies
 
-{
-  "name": "smnst-frontend",
-  "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -84,36 +80,7 @@ Making SONOMI, more functional by adding:
     "stripe": "^10.8.0",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "description": "This is the React FrontEnd part of our Final group-project.",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC"
-}
+  }
 
 <!-- TEAM -->
 
