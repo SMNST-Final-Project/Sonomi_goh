@@ -10,37 +10,50 @@ import { mobile } from "../../responsive";
 import axios from "axios";
 import { addProduct } from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  
+
   ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 
 const ImgContainer = styled.div`
   flex: 1;
+  
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: 90vh;
+  width: 80%;
+  height: 70vh;
   object-fit: cover;
+  margin-left: 90px;
   ${mobile({ height: "40vh" })}
 `;
 const InfoContainer = styled.div`
   flex: 1;
-  padding: 0px 50px;
+  padding: 20px 50px;
+  margin-top: 30px;
+
   ${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
-  font-weight: 200;
+  font-weight: bold;
+  font-size: 40px;
+  color:  #696565;
 `;
 
 const Desc = styled.p`
   margin: 20px 0px;
+  padding-right: 10px;
+  font-size: large;
+  letter-spacing: 1px;
+  
 `;
 const Price = styled.span`
   font-weight: 100;
@@ -56,7 +69,12 @@ const TextContainer = styled.div`
   ${mobile({ width: "100%" })}
 `;
 const TextInstructions = styled.div``;
-const TextIngredients = styled.div``;
+const TextIngredients = styled.div`
+font-size: medium;
+  letter-spacing: 1px;
+  
+  
+`;
 
 const AddContainer = styled.div`
   width: 50%;
@@ -93,6 +111,7 @@ const Button = styled.button`
     background-color: #f8f4f4;
   }
 `;
+const linkStyling = {textDecoration:"none", color:"black", marginLeft:"60px"}
 export const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
@@ -135,7 +154,16 @@ export const Product = () => {
   return (
     <Container>
       <Navbar />
-      
+      <Link to="/products"
+     style={linkStyling}
+  
+     > 
+     <h3 style={{
+      color:"#696363",
+      marginLeft: "120px"
+      }}>Products / New Arrivals / Gifts   </h3> 
+     </Link>
+     
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
@@ -150,9 +178,9 @@ export const Product = () => {
           </TextContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove onClick={() => handleQuantity("dec")} />
+              <Remove onClick={() => handleQuantity("dec")} style={{cursor:"pointer"}} />
               <Amount>{quantity}</Amount>
-              <Add onClick={() => handleQuantity("inc")} />
+              <Add onClick={() => handleQuantity("inc")} style={{cursor:"pointer"}}/>
             </AmountContainer>
             <Button onClick={handleProductClick}>ADD TO CART</Button>
           </AddContainer>

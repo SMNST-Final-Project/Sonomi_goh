@@ -24,7 +24,7 @@ font-size: 20px;
 font-weight: 100;
 margin-top: 15px;
 margin-left: 60px;
-color: #545151;
+color: #696363;
 `
 const linkStyling = {textDecoration:"none", color:"black", marginLeft:"60px"}
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { mobile } from "../../responsive";
 import { Link } from "react-router-dom";
+import { FavoriteBorder } from "@mui/icons-material";
 
 const Container = styled.div`
   flex: 1;
@@ -35,10 +36,27 @@ const Title = styled.h1`
 const Button = styled.button`
   border: none;
   padding: 10px;
-  background-color: #ebe2e2;
+  background-color: transparent;
   color: #211d1d;
   cursor: pointer;
   font-weight: 600;
+`;
+
+const Icon = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: snow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: #ebe2e2;
+    transform: scale(1.1);
+  }
 `;
 
 export const CategoryItem = ({ item }) => {
@@ -48,7 +66,10 @@ export const CategoryItem = ({ item }) => {
         <Image src={item.img} />
         <Info>
           <Title> {item.title} </Title>
-          <Button>Instant Buy</Button>
+          <Button>
+            <Icon>
+              <FavoriteBorder />
+            </Icon></Button>
         </Info>
       </Link>
     </Container>

@@ -1,7 +1,5 @@
 import {
-  FavoriteBorder,
   Search,
-  ShoppingCartCheckoutOutlined,
 } from "@mui/icons-material";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -77,13 +75,7 @@ const Product = ({ item }) => {
         <Link to={`/products/${item._id}`}>
           <Info>
             <Icon>
-              <ShoppingCartCheckoutOutlined />
-            </Icon>
-            <Icon>
               <Search />
-            </Icon>
-            <Icon>
-              <FavoriteBorder />
             </Icon>
           </Info>
         </Link>

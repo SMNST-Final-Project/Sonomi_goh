@@ -6,12 +6,12 @@ import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
 import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import { mobile, tablet } from "../../responsive.js";
+import { mobile} from "../../responsive.js";
 import Sonomi from "../../assets/videoBg/9.png";
+import { SubNav } from "./SubNav.jsx";
 
 // redux
 import { useSelector } from "react-redux";
-import { SubNav } from "./SubNav.jsx";
 
 const Container = styled.div`
   height: 80px;
@@ -20,7 +20,6 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
   padding: 20px 40px;
-  
   display: flex;
   justify-content: space-between;
   ${mobile({ padding: "10px 0px" })}

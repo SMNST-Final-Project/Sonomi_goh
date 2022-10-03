@@ -7,13 +7,15 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Sonomi from "../../assets/videoBg/9.png";
 
+// redux
+import { useSelector } from "react-redux";
+
 const Container = styled.div`
   height: 80px;
   background-color: #ebe2e2;
 `;
 const Wrapper = styled.div`
   padding: 20px 40px;
-  color: snow;
   display: flex;
   justify-content: space-between;
 `;
@@ -55,6 +57,7 @@ const MenuItem = styled.div`
 `;
 
 export const HomeNavbar = () => {
+  const quantity = useSelector((state) => state.cart.cartTotalQuantity);
   return (
     <>
       <Container>
@@ -114,7 +117,7 @@ export const HomeNavbar = () => {
           </Button>
 
           <MenuItem>
-            <Badge badgeContent={1} component={Link} to={"/cart"}>
+            <Badge badgeContent={quantity} component={Link} to={"/cart"}>
               <ShoppingCartOutlined style={{ color: "gray" }} />
             </Badge>
           </MenuItem>

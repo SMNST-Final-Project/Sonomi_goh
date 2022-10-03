@@ -43,6 +43,7 @@ export const ProductList = () => {
   const location = useLocation();
   const category = new URLSearchParams(location.search).get("category");
   console.log(category);
+  //const productName = new URLSearchParams(location.search).get("item");
 
   return (
     <Container>
@@ -61,6 +62,8 @@ export const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
+
+      {/**style this Products tag */}
       <Products category={category} sort={sort} />
       <Newsletter />
 

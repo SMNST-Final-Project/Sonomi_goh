@@ -232,9 +232,9 @@ export const Cart = () => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add onClick={() => handleAddProduct(product)} />
+                    <Add onClick={() => handleAddProduct(product)} style={{cursor:"pointer"}} />
                     <ProductAmount>{product.cartQuantity}</ProductAmount>
-                    <Remove onClick={() => handleDecreaseProduct(product)} />
+                    <Remove onClick={() => handleDecreaseProduct(product)} style={{cursor:"pointer"}}/>
                   </ProductAmountContainer>
                   <ProductPrice>
                     $ {product.price * product.quantity}
