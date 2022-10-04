@@ -22,10 +22,12 @@ const Info = styled.div`
 `;
 
 const Container = styled.div`
-  flex: 1;
+  flex: 1 0 30%;
+ 
+  flex-direction: column;
   margin: 5px;
-  min-width: 280px;
-  height: 350px;
+  
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,10 +47,13 @@ const Circle = styled.div`
   position: absolute;
 `;
 const Image = styled.img`
-  height: 75%;
-  z-index: 2;
+  height: 150px;
+  
 `;
-
+const Title = styled.h1`
+  color: black;
+  margin-bottom: 20px;
+`;
 const Icon = styled.div`
   width: 40px;
   height: 40px;
@@ -70,8 +75,9 @@ const Product = ({ item }) => {
   return (
     <>
       <Container>
-        <Circle />
-        <Image src={item.img} />
+  
+        <Title> {item.title} </Title>
+        <Image  src={item.img} />
         <Link to={`/products/${item._id}`}>
           <Info>
             <Icon>

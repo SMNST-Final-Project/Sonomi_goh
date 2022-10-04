@@ -7,7 +7,7 @@ const Container = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  
 `;
 
 export const Products = ({ category }) => {
@@ -38,7 +38,7 @@ export const Products = ({ category }) => {
       {category
         ? products.map((item) => <Product item={item} key={item.id} />)
         : products
-            .slice(0, 8)
+            .slice(0, 5)
             .map((item) => <Product item={item} key={item.id} />)}
     </Container>
   );
