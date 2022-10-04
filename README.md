@@ -110,7 +110,3 @@ SONOMI Team,
 - [Figma Design](https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161)
 - [MURAL Design](https://app.mural.co/t/dciwebdevfinalproject20226231/m/dciwebdevfinalproject20226231/1660827077913/0dd01faf6770b00bf65bd15adf06eba68290c697?sender=ubffe43a24a9837cdd8a80039)
 - [Github Project Page](https://github.com/orgs/SMNST-Final-Project/projects/1/views/1?layout=board)
-
-
-
-++
