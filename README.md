@@ -1,6 +1,6 @@
 <h1 align="center">Sonomi App Frontend</h1>
 <p align="center">
-check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/server" target="_blank">Backend</a> or our <a href="" target="_blank">live app</a>
+check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/server" target="_blank">FrontEnd</a> or our <a href="" target="_blank">live app</a>
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -30,95 +30,87 @@ Our Darling Project "Sonomi, garden of hope" by all means shows our enthusiasm t
 
 One of our team member has floated this idea of working on an application where people not only can buy Natural, Holistic, Chemical free products but also it provides a place to be in a community of like minded people interacting and exchanging ideas.
 
+## Features
 
+The users are able to register an account, login, and browse through different Pages.
+The Pages are:
+- Landing Page
+- Home
+- Products Page
+- Single Product Page
+- Register Page
+- Login Page
+- Cart Page
+- Payment Page
+- Checkout Page
+- Team Page
 
+The users can add products to the cart and go through the checkout.
 
+<h2 align="center">Future Plans Of Sonomi</h2>
 
+Making SONOMI, more functional by adding:
+- Admins Dashboard
+- User Own Dashboard
+- Adding more functionality to the components
 
-## What is the idea?
-  - target users
-  - brief description (one paragraph)
-  - use cases
-  - What does it solve?
-  - ...
-
-## Design
-  - Color/Palette
-  - Layout
-  - Target Devices (mobile, desktop, ...)
-  - Mockups
-  - Wire frames
-  - Fonts
-  - ...
-
-## Structure and Software Architecture
-  - Fullstack
-    - Frontend
-    - Backend
-      - REST-API
-        - routes
-    - Database
-      - Seeding with dev/test data
-  - Data-Structure (potentially)
-  - flow charts
-  - ...
+<!-- TECHNOLOGIES -->
 
 ## Technologies
-  - foreign APIs
-  - special software packages/modules
-  - ...
+
+""{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2",
+    "morgan": "^1.10.0",
+    "strip": "^3.0.0",
+    "stripe": "^10.8.0",
+    "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
+
+<!-- TEAM -->
+
+## Team
+
+SONOMI Team,
+
+- [Mehmet Ali ](https://github.com/akayami001): Full Stack Web Developer
+- [Sadaf Qureshi](https://github.com/green2050): Full Stack Web Developer
+- [Thiago Souza](https://github.com/mistersouza): Full Stack Web Developer
+- [Nur Nobi Dulal](https://github.com/nndulal): Full Stack Web Developer
+- [Shadi Maqsoud](https://github.com/BananaJoe94): Full Stack Web Developer
 
 
-# A MERN STACK FULL Application
+<!-- LINKS -->
 
-**Description
+## Links
 
-This repository contains a project containing ReactJs Libraries. A series of ReactJs projects to learn React, Axios.
-
-
-### Libraries used
-* styled-components
-* axios
-* react-scripts
-* emoji-picker-react
-
-
-### 
-
-
-### Later
-* working on Design
+- [SONOMI Frontend](https://github.com/SMNST-Final-Project/deployready/tree/main/client)
+- [Figma Design](https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161)
+- [MURAL Design](https://app.mural.co/t/dciwebdevfinalproject20226231/m/dciwebdevfinalproject20226231/1660827077913/0dd01faf6770b00bf65bd15adf06eba68290c697?sender=ubffe43a24a9837cdd8a80039)
+- [Github Project Page](https://github.com/orgs/SMNST-Final-Project/projects/1/views/1?layout=board)
 
 
 
-### LogIn
-#Basic button
-The Button comes with three variants: text (default), contained, and outlined.
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-
-
-## Material
-*Wrapped labels
-*Tabs
-*drawer
-*snackbar
-
-
-###Euro Є
-
-
-
-### 
-
-
-
-### 
-
-
-
-### 
-
-
-### 
+++
