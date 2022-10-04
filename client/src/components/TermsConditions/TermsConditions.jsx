@@ -23,7 +23,7 @@ const Container = styled.div`
 export const TermsConditions = () => {
   return (
    <> 
-   <h1 style={{marginBottom:"10px", marginLeft:"800px", marginTop:"20px", fontSize:"50px"}}>Terms And Conditions</h1>
+   <h1 style={{marginBottom:"10px", marginLeft:"700px", marginTop:"40px", fontSize:"50px"}}>Terms And Conditions</h1>
    <Container>
    
    <p> SONOMI Terms and Conditions Policy

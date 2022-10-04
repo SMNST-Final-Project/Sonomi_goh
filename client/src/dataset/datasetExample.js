@@ -85,7 +85,7 @@ export const sliderItems = [
     },
     {
       id: 4,
-      img: "https://images.unsplash.com/photo-1563660322566-e9bc3441b70c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGNiZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      img: "https://images.unsplash.com/photo-1614961234425-dedd96e5e699?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGJyZWFrZmFzdCUyMGNlcmVhbHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
       title: "Breakfast",
       categories:"food"
     },

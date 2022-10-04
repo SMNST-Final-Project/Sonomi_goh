@@ -13,7 +13,7 @@ import Sonomi from "../../assets/videoBg/9.png";
 
 const Container = styled.div`
   display: flex;
-  ${mobile({ flexDirection: "column" })}
+  ${mobile({ flexDirection: "column"})}
   ${tablet ({ marginTop: "10px"})}
 
 `;

@@ -26,7 +26,6 @@ const Container = styled.div`
  
   flex-direction: column;
   margin: 5px;
-  
   height: 450px;
   display: flex;
   align-items: center;
@@ -47,12 +46,14 @@ const Circle = styled.div`
   position: absolute;
 `;
 const Image = styled.img`
-  height: 150px;
+  height: 300px;
   
 `;
 const Title = styled.h1`
   color: black;
   margin-bottom: 20px;
+  font-size: large;
+  font-weight: 700;
 `;
 const Icon = styled.div`
   width: 40px;
