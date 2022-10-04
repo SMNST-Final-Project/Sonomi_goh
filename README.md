@@ -58,7 +58,8 @@ Making SONOMI, more functional by adding:
 
 ## Technologies
 
-""{
+```
+{
   "name": "server",
   "version": "1.0.0",
   "description": "",
@@ -88,6 +89,7 @@ Making SONOMI, more functional by adding:
     "nodemon": "^2.0.19"
   }
 }
+```
 
 <!-- TEAM -->
 
