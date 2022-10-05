@@ -6,7 +6,7 @@ import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
 import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import { mobile} from "../../responsive.js";
+import { mobile } from "../../responsive.js";
 import Sonomi from "../../assets/videoBg/9.png";
 import { SubNav } from "./SubNav.jsx";
 
@@ -30,8 +30,7 @@ const Logo = styled.div`
   width: 100px;
   height: 100px;
   z-index: 1;
-  ${mobile({ display: "none"})}
-  //${mobile({ height: "20px", width:"20px"})}
+  ${mobile({ display: "none" })}//${mobile({ height: "20px", width: "20px" })}
 `;
 
 const SearchContainer = styled.div`
@@ -44,12 +43,11 @@ const SearchContainer = styled.div`
   margin-bottom: 5px;
   border: none;
   cursor: pointer;
-
 `;
 const Input = styled.input`
   border: none;
   padding: 8px;
-  width:300px;
+  width: 300px;
 
   ${mobile({ width: "50px" })}
 `;
@@ -64,11 +62,14 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 15px;
-  ${mobile({ fontSize: "12px", marginLeft: "10px"})}
+  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
 export const Navbar = () => {
-  const quantity = useSelector((state) => state.cart.cartTotalQuantity);
+  const quantity = useSelector((state) => {
+    console.log("total quantity", state);
+    return state.cart.cartTotalQuantity;
+  });
 
   return (
     <>
@@ -81,61 +82,61 @@ export const Navbar = () => {
             </Link>
           </Logo>
           {/**Search Bar */}
-          <SearchContainer >
+          <SearchContainer>
             <SearchIcon
               style={{ color: "black", marginRight: "5px", fontSize: 20 }}
             />
             <Input placeholder="search" />
           </SearchContainer>
           <Right>
-          {/**Team Link */}
-          <Button
-            variant="text"
-            component={Link}
-            to={"/team"}
-            style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
-          >
-            Team
-            <Diversity3Outlined fontSize="small" />
-          </Button>
+            {/**Team Link */}
+            <Button
+              variant="text"
+              component={Link}
+              to={"/team"}
+              style={{ color: "gray", marginLeft: "5px", fontSize: 16 }}
+            >
+              Team
+              <Diversity3Outlined fontSize="small" />
+            </Button>
 
-          {/**Login button */}
-          <Button
-            variant="text"
-            component={Link}
-            to={"/login"}
-            style={{ color: "gray", marginLeft: "5px", fontSize: 15 }}
-          >
-            Log In
-            <LoginRoundedIcon fontSize="small" />
-          </Button>
+            {/**Login button */}
+            <Button
+              variant="text"
+              component={Link}
+              to={"/login"}
+              style={{ color: "gray", marginLeft: "5px", fontSize: 15 }}
+            >
+              Log In
+              <LoginRoundedIcon fontSize="small" />
+            </Button>
 
-          {/**Register button---MUI component  */}
-          <Button
-            size="small"
-            component={Link}
-            to={"/signup"}
-            variant="text"
-            style={{
-              color: "gray",
-              cursor: "pointer",
-              padding: "1px",
-              margin: "1px",
-            }}
-          >
-            Register
-            <HowToRegRoundedIcon fontSize="small"/>
-          </Button>
-          <MenuItem>
-            {/**redux added */}
-            <Badge badgeContent={quantity} component={Link} to={"/cart"}>
-              <ShoppingCartOutlined style={{ color: "gray" }} />
-            </Badge>
-          </MenuItem>
+            {/**Register button---MUI component  */}
+            <Button
+              size="small"
+              component={Link}
+              to={"/signup"}
+              variant="text"
+              style={{
+                color: "gray",
+                cursor: "pointer",
+                padding: "1px",
+                margin: "1px",
+              }}
+            >
+              Register
+              <HowToRegRoundedIcon fontSize="small" />
+            </Button>
+            <MenuItem>
+              {/**redux added */}
+              <Badge badgeContent={quantity} component={Link} to={"/cart"}>
+                <ShoppingCartOutlined style={{ color: "gray" }} />
+              </Badge>
+            </MenuItem>
           </Right>
         </Wrapper>
       </Container>
-      <SubNav/>
+      <SubNav />
     </>
   );
 };

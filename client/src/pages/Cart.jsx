@@ -237,7 +237,7 @@ export const Cart = () => {
                     <Remove onClick={() => handleDecreaseProduct(product)} style={{cursor:"pointer"}}/>
                   </ProductAmountContainer>
                   <ProductPrice>
-                    $ {product.price * product.quantity}
+                    $ {product.price * product.cartQuantity}
                   </ProductPrice>
                 </PriceDetail>
               </Product>
