@@ -18,7 +18,7 @@ check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/
 ## Overview
 
 
-Our Final Project for the 1 year Full Stack Web development course at [DCI Digital Career Institute gGmbH](https://digitalcareerinstitute.org/de/).
+Our Final Project for the 1 year Full Stack Web development course at [DCI Digital Career Institute GmbH](https://digitalcareerinstitute.org/de/).
 
 The Project take place from the 20th of August 2022 to the 11th October, 2022.
 
@@ -101,7 +101,7 @@ SONOMI Team,
 - [Sadaf Qureshi](https://github.com/green2050): Full Stack Web Developer
 - [Thiago Souza](https://github.com/mistersouza): Full Stack Web Developer
 - [Nur Nobi Dulal](https://github.com/nndulal): Full Stack Web Developer
-- [Shadi Maqsoud](https://github.com/BananaJoe94): Full Stack Web Developer
+- [Shadi Maksoud](https://github.com/BananaJoe94): Full Stack Web Developer
 
 
 <!-- LINKS -->
