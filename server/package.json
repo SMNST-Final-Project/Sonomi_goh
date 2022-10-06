@@ -20,8 +20,10 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.5.2",
     "morgan": "^1.10.0",
+    "path": "^0.12.7",
     "strip": "^3.0.0",
     "stripe": "^10.8.0",
+    "url": "^0.11.0",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {

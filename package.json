@@ -1,0 +1,24 @@
+{
+  "name": "deployready",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Sonomi App Frontend</h1> <p align=\"center\"> check our <a href=\"https://github.com/SMNST-Final-Project/deployready/tree/main/server\" target=\"_blank\">FrontEnd</a> or our <a href=\"\" target=\"_blank\">live app</a> </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "cd client && npm install && npm run build && cd ../server && npm install",
+    "start": "npm start --prefix server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SMNST-Final-Project/deployready.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SMNST-Final-Project/deployready/issues"
+  },
+  "homepage": "https://github.com/SMNST-Final-Project/deployready#readme",
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}
