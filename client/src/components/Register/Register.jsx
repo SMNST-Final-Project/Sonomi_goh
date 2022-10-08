@@ -11,6 +11,8 @@ import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const Container = styled.div`
   width: 100vw;
@@ -77,8 +79,13 @@ const Register = () => {
             <Typography gutterBottom variant="h4">
               Register
             </Typography>
-            <Typography color="textSecondary" variant='"subtitle1"'>
-              Fill up the form and get access to our new features and Products
+            <Typography 
+            color="textSecondary" 
+            variant='"subtitle1"'
+            component="h3"
+            style={{marginBottom:"15px"}}
+            >
+              Get instant access to our new features and Products
               everyday.
             </Typography>
 
@@ -220,17 +227,33 @@ const Register = () => {
                 </Grid>
 
                 {/**Submit button */}
-                <Grid xs={12} textAlign="center" sx={{ marginBottom: "1rem" }}>
+                <Grid xs={12} textAlign="center" sx={{ marginBottom: "5px", marginTop: "5px" }}>
                   <Button
                     style={{ backgroundColor:"#409460" }}
                     variant="contained"
                     type="submit"
-                    size="medium"
+                    size="large"
                   >
                     Register
                   </Button>
                 </Grid>
               </Grid>
+              <Typography>
+            Already have an account? <br/> 
+            <Link
+              style={{textDecoration:"none", color:"#409460"}}
+              component="button"
+              to={"/login"}
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Login here
+            </Link>
+          </Typography>
+
+
+
             </form>
           </CardContent>
         </Card>

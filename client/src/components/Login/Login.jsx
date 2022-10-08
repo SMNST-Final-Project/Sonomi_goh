@@ -117,7 +117,7 @@ const Login = () => {
           />
 
           <FormControlLabel
-            control={<Checkbox name="checkedB" color="primary" />}
+            control={<Checkbox name="checkedB" color="secondary" />}
             label="Remember Me"
           />
           {/**Forgot Password */}
