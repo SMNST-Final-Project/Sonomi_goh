@@ -98,21 +98,19 @@ export const Team = () => {
 
             <div className='container'>
 
-             <Link to={{pathname:"https://app.mural.co/t/dciwebdevfinalproject20226231/m/dciwebdevfinalproject20226231/1660827077913/0dd01faf6770b00bf65bd15adf06eba68290c697?sender=ubffe43a24a9837cdd8a80039"}}
+             <a href="https://app.mural.co/t/dciwebdevfinalproject20226231/m/dciwebdevfinalproject20226231/1660827077913/0dd01faf6770b00bf65bd15adf06eba68290c697?sender=ubffe43a24a9837cdd8a80039"
              target="_blank" 
              style={linkStyling}
              > 
                 <img src={mural} alt='mural' />
                 <h2 >" Mural "</h2>
-                </Link>
-              <Link 
-              to={{
-                pathname:
-                  "https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161"
-              }}
+                </a>
+              <a
+              href="https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161"
+              
               target="_blank"
               style={linkStyling}
-              >   <img src={figma} alt='figma' /><h2>" Figma "</h2></Link> 
+              >   <img src={figma} alt='figma' /><h2>" Figma "</h2></a> 
                
             </div>
 
