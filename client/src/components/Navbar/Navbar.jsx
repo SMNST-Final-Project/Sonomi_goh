@@ -79,7 +79,7 @@ export const Navbar = (props) => {
 
    <>
 
-      { location.pathname === "/login" || location.pathname === "/signup" ? null :
+      { location.pathname === "/login" || location.pathname === "/signup" || location.pathname === "/pay" ? null :
 
     <>
       <Container>
