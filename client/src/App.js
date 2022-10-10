@@ -11,14 +11,40 @@ import { ProductList } from "./pages/Products/ProductList";
 import { Pay } from "./components/Pay/Pay";
 import { Success } from "./components/Pay/Success";
 import { TermsConditions } from "./components/TermsConditions/TermsConditions";
+import { Navbar } from "./components/Navbar/Navbar";
+import { useState } from "react";
 
 const App = () => {
+  const [username, setUsername] = useState("");
+  const [authorized, setAuthorized] = useState(false);
+
+  const authorizationHandler = (firstName) => {
+    console.log("first name app", firstName
+    )
+    setAuthorized(true);
+    setUsername(firstName);
+  };
+  const logoutHandler = () => {
+    setAuthorized(false);
+    setUsername('')
+  };
+
   return (
     <>
+      <Navbar
+        authorized={authorized}
+        username = {username}
+        authorizationHandler={authorizationHandler}
+        logoutHandler={logoutHandler}
+        
+      />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login authorizationHandler={authorizationHandler} />}
+        />
         <Route path="/signup" element={<Register />} />
         <Route path="/products/:id" element={<Product />} />
         <Route path="/products" element={<ProductList />} />

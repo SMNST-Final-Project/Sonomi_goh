@@ -153,7 +153,7 @@ export const Product = () => {
 
   return (
     <Container>
-      <Navbar />
+     
       <Link to="/products"
      style={linkStyling}
   

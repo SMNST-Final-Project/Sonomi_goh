@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Badge } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { Diversity3Outlined, ShoppingCartOutlined } from "@mui/icons-material";
+import { AccountBoxOutlined, Diversity3Outlined, ShoppingCartOutlined } from "@mui/icons-material";
 import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
 import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
 import Button from "@mui/material/Button";
@@ -43,7 +43,6 @@ const SearchContainer = styled.div`
   margin-bottom: 5px;
   border: none;
   cursor: pointer;
-  
 `;
 const Input = styled.input`
   border: none;
@@ -66,7 +65,8 @@ const MenuItem = styled.div`
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
-export const Navbar = () => {
+export const Navbar = (props) => {
+  
   const quantity = useSelector((state) => {
     console.log("total quantity", state);
     return state.cart.cartTotalQuantity;
@@ -82,6 +82,8 @@ export const Navbar = () => {
               <img src={Sonomi} alt="" width="150px" height="150px" />
             </Link>
           </Logo>
+          {console.log("user in navbar", props)}
+          {props.username?`welcome ${props.username}` : null}
           {/**Search Bar */}
           <SearchContainer>
             <SearchIcon
@@ -102,32 +104,65 @@ export const Navbar = () => {
             </Button>
 
             {/**Login button */}
-            <Button
-              variant="text"
-              component={Link}
-              to={"/login"}
-              style={{ color: "gray", marginLeft: "5px", fontSize: 15 }}
-            >
-              Log In
-              <LoginRoundedIcon fontSize="small" />
-            </Button>
+            {!props.authorized ? (
+              <>
+                <Button
+                  variant="text"
+                  component={Link}
+                  to={"/login"}
+                  style={{ color: "gray", marginLeft: "5px", fontSize: 15 }}
+                >
+                  Log In
+                  <LoginRoundedIcon fontSize="small" />
+                </Button>
+                <Button
+                  size="small"
+                  component={Link}
+                  to={"/signup"}
+                  variant="text"
+                  style={{
+                    color: "gray",
+                    cursor: "pointer",
+                    padding: "1px",
+                    margin: "1px",
+                  }}
+                >
+                  Register
+                  <HowToRegRoundedIcon fontSize="small" />
+                </Button>
+              </>
+            ) : (
+              <>
+              <Button
+            component={Link}
+            to={"/userprofile"}
+            variant="text"
+            style={{
+              color: "gray",
+              cursor: "pointer",
+              borderRadius: "20% 20%",
+            }}
+          >
+            My Account
+            <AccountBoxOutlined />
+          </Button>
+              <Button
+                variant="text"
+                component={Link}
+                style={{ color: "gray", marginLeft: "5px", fontSize: 15 }}
+                onClick={() => {
+                  localStorage.removeItem("token")
+                props.logoutHandler()
+                }}
+                >
+                Log Out
+                <LoginRoundedIcon fontSize="small" />
+              </Button>
 
-            {/**Register button---MUI component  */}
-            <Button
-              size="small"
-              component={Link}
-              to={"/signup"}
-              variant="text"
-              style={{
-                color: "gray",
-                cursor: "pointer",
-                padding: "1px",
-                margin: "1px",
-              }}
-            >
-              Register
-              <HowToRegRoundedIcon fontSize="small" />
-            </Button>
+                </>
+            )}
+
+            
             <MenuItem>
               {/**redux added */}
               <Badge badgeContent={quantity} component={Link} to={"/cart"}>
@@ -137,7 +172,7 @@ export const Navbar = () => {
           </Right>
         </Wrapper>
       </Container>
-      <SubNav />
+      <SubNav/>
     </>
   );
 };

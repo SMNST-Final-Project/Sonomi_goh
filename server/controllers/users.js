@@ -92,7 +92,7 @@ export const login =
       }
       const token = await user.generateAuthToken();
 
-      res.status(200).send({ message: "Welcome back", token });
+      res.status(200).send({ name:user.firstName , token });
     } catch (error) {
       //console.log(error);
       res.status(400).json({ message: "Server error" });

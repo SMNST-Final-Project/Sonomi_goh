@@ -5,7 +5,7 @@ import { Footer } from "../Footer/Footer";
 import { SubNav } from "../Navbar/SubNav";
 import { Newsletter } from "../Newsletter/Newsletter";
 import { Products } from "../Products/Products";
-import { HomeNavbar } from "./HomeNavbar";
+import { Navbar } from "../Navbar/Navbar";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -31,8 +31,7 @@ const linkStyling = {textDecoration:"none", color:"black", marginLeft:"60px"}
 export const Home = () => {
   return (
     <>
-      <HomeNavbar />
-     <SubNav/>
+     
 
      <Container>
       

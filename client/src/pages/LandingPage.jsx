@@ -7,7 +7,7 @@ import { Newsletter } from "../components/Newsletter/Newsletter";
 export const LandingPage = () => {
   return (
     <div>
-      <Navbar />
+   
       <Slider />
      <Newsletter/> 
       <Footer />

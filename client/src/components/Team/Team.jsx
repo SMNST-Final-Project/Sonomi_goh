@@ -42,26 +42,7 @@ export const Team = () => {
   return (
     <Container>
   {/**Logo */}
-  <TeamNav>
-  
-              <img src={Sonomi} alt="" width="130px" height="130px" />
-              <h1 style={{marginLeft:"100px"}}>Our Own Team Page</h1> 
-              <Button
-              variant="text"
-              component={Link}
-              to={"/home"}
-              style={{
-                color: " #5f5f5f",
-                cursor: "pointer",
-                padding: "5px",
-                marginLeft: "50rem",
-               
-              }}
-            >
-              Home
-              <HomeOutlined fontSize="small" />
-            </Button> 
-          </TeamNav>
+ 
         
           {/**first video */}
       <div className="main">

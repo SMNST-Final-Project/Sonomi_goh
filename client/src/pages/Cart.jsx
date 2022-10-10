@@ -193,7 +193,7 @@ export const Cart = () => {
 
   return (
     <Container>
-      <Navbar />
+     
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>

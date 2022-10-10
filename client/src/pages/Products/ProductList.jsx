@@ -6,8 +6,7 @@ import { Products } from "../../components/Products/Products";
 import { Newsletter } from "../../components/Newsletter/Newsletter";
 import { Footer } from "../../components/Footer/Footer";
 import { mobile } from "../../responsive";
-import { HomeNavbar } from "../../components/Home/HomeNavbar";
-import { SubNav } from "../../components/Navbar/SubNav";
+import { Navbar } from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 
 const ContainerOne = styled.div``;
@@ -66,8 +65,8 @@ export const ProductList = () => {
 
   return (
     <ContainerOne>
-      <HomeNavbar />
-     <SubNav/> 
+    
+     
      
      <ContainerTwo>
       

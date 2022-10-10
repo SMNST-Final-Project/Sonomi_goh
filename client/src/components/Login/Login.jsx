@@ -33,7 +33,8 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Login = () => {
+const Login = (props) => {
+  console.log("props in login", props);
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -53,12 +54,13 @@ const Login = () => {
       .post("http://localhost:5000/users/login", user, {
         headers: {
           "Content-Type": "application/json",
-        
         },
       })
       .then((res) => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
+        console.log("dta in login", res.data);
+        props.authorizationHandler(res.data.name)
         navigate("/home");
       })
       .catch((err) => {
@@ -81,92 +83,95 @@ const Login = () => {
   };
 
   return (
-   <>
-    <Container>
-      <Grid>
-     <h2 style={{marginLeft: "85px", fontSize:"40px", color:" #696565"}}>Welcome Back</h2> 
-        <Paper elevation={24} style={paperStyle}>
-          <Grid align="center">
-            <Avatar style={avatarStyle}>
-              <LockOutlinedIcon style={{fontSize:"25px"}} />
-            </Avatar>
+    <>
+      <Container>
+        <Grid>
+          <h2
+            style={{ marginLeft: "85px", fontSize: "40px", color: " #696565" }}
+          >
+            Welcome Back
+          </h2>
+          <Paper elevation={24} style={paperStyle}>
+            <Grid align="center">
+              <Avatar style={avatarStyle}>
+                <LockOutlinedIcon style={{ fontSize: "25px" }} />
+              </Avatar>
 
-            <h2>Log In</h2>
-          </Grid>
-          <TextField
-            style={{ marginBottom: "5px" }}
-            margin="dense"
-            label="Email"
-            placeholder="Enter your name here"
-            onChange={changeHandler}
-            name="email"
-            fullWidth
-            required
-          />
-
-          <TextField
-            style={{ marginTop: "5px" }}
-            margin="dense"
-            label="Password"
-            placeholder="Enter password here"
-            type="password"
-            name="password"
-            onChange={changeHandler}
-            fullWidth
-            required
-          />
-
-          <FormControlLabel
-            control={<Checkbox name="checkedB" color="secondary" />}
-            label="Remember Me"
-          />
-          {/**Forgot Password */}
-          <Typography>
-            <Link
-              color="#409460"
-              href="#"
-              style={{textDecoration:"none"}}
-              onClick={() => {
-                navigate("/signup");
-              }}
-            >
-              Forgot password?
-            </Link>
-          </Typography>
-
-          {/**Sign In  */}
-          <div>
-            <Button
-              type="submit"
-              variant="contained"
-              onClick={submitHandler}
+              <h2>Log In</h2>
+            </Grid>
+            <TextField
+              style={{ marginBottom: "5px" }}
+              margin="dense"
+              label="Email"
+              placeholder="Enter your name here"
+              onChange={changeHandler}
+              name="email"
               fullWidth
-              style={btnStyle}
-              endIcon={<SendIcon />}
-            >
-              Sign In
-            </Button>
-            <Popup />
-          </div>
+              required
+            />
 
-          
-          <Typography>
-            Don't have an account? <br/> 
-            <Link
-              style={{textDecoration:"none", color:"#409460"}}
-              component="button"
-              to={"/signup"}
-              onClick={() => {
-                navigate("/signup");
-              }}
-            >
-              Create an Account
-            </Link>
-          </Typography>
-        </Paper>
-      </Grid>
-    </Container>
-    </> 
+            <TextField
+              style={{ marginTop: "5px" }}
+              margin="dense"
+              label="Password"
+              placeholder="Enter password here"
+              type="password"
+              name="password"
+              onChange={changeHandler}
+              fullWidth
+              required
+            />
+
+            <FormControlLabel
+              control={<Checkbox name="checkedB" color="secondary" />}
+              label="Remember Me"
+            />
+            {/**Forgot Password */}
+            <Typography>
+              <Link
+                color="#409460"
+                href="#"
+                style={{ textDecoration: "none" }}
+                onClick={() => {
+                  navigate("/signup");
+                }}
+              >
+                Forgot password?
+              </Link>
+            </Typography>
+
+            {/**Sign In  */}
+            <div>
+              <Button
+                type="submit"
+                variant="contained"
+                onClick={submitHandler}
+                fullWidth
+                style={btnStyle}
+                endIcon={<SendIcon />}
+              >
+                Sign In
+              </Button>
+              <Popup />
+            </div>
+
+            <Typography>
+              Don't have an account? <br />
+              <Link
+                style={{ textDecoration: "none", color: "#409460" }}
+                component="button"
+                to={"/signup"}
+                onClick={() => {
+                  navigate("/signup");
+                }}
+              >
+                Create an Account
+              </Link>
+            </Typography>
+          </Paper>
+        </Grid>
+      </Container>
+    </>
   );
 };
 
