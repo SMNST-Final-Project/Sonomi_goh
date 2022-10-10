@@ -11,6 +11,7 @@ import { Announcement } from "../Announcement/Announcement";
 //images import
 import figma from "../../assets/videoBg/figma.png"
 import mural from "../../assets/videoBg/mural.png"
+import { TeamNav } from "./TeamNav";
 
 
 
@@ -19,13 +20,7 @@ const Container = styled.div`
   background: #ebe2e2;
   overflow: hidden;
 `
-const TeamNav = styled.div`
-display: flex;
-justify-content: center;
-  align-items: center;
-  padding-Top:  5px;
-  
-`;
+
 
 const Hr = styled.hr`
   background-color: #dad0d0d1;
@@ -41,20 +36,25 @@ export const Team = () => {
 
  
     <Container>
+    <TeamNav/> 
   
   {/**Logo */}
  
         
           {/**first video */}
       <div className="main">
-        <div className="overlay"></div>
         <video autoPlay loop muted>
+        <div className="overlay"> </div>
+
           <source src={videoBg} type="video/mp4" />
           <source src={ovgvd} type="video/ogg" />
+         
         </video>
+       
         <div className="content">
-        <p>Welcome</p>
+        
         </div>
+        
          </div>
       <Hr/>
       
@@ -68,9 +68,11 @@ export const Team = () => {
         paddingTop: "100px"
         
       }}>
+         
       <video autoPlay loop muted>
           <source src={vid2} type="video/mp4" />
         </video>
+       
         </section>
         
       <Hr/>
@@ -80,14 +82,14 @@ export const Team = () => {
 
             <div className='container'>
 
-             <a href="https://app.mural.co/t/dciwebdevfinalproject20226231/m/dciwebdevfinalproject20226231/1660827077913/0dd01faf6770b00bf65bd15adf06eba68290c697?sender=ubffe43a24a9837cdd8a80039"
+             <a rel="noreferrer" href="https://app.mural.co/t/dciwebdevfinalproject20226231/m/dciwebdevfinalproject20226231/1660827077913/0dd01faf6770b00bf65bd15adf06eba68290c697?sender=ubffe43a24a9837cdd8a80039"
              target="_blank" 
              style={linkStyling}
              > 
                 <img src={mural} alt='mural' />
                 <h2 >" Mural "</h2>
                 </a>
-              <a
+              <a rel="noreferrer"
               href="https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161"
               
               target="_blank"
@@ -100,7 +102,7 @@ export const Team = () => {
             </div>
             <Hr/> 
       <Footer />
-            <TeamNav/>
+           
       <Announcement/>
     </Container>
     </> 

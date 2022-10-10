@@ -5,7 +5,7 @@ check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/
 
 <!-- TABLE OF CONTENTS -->
 
-## Table of Contents
+**Table of Contents**
 
 - [About](#about)  
 - [Features](#features)
@@ -15,14 +15,14 @@ check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/
 
 <!-- ABOUT -->
 
-## Overview
+**Overview**
 
 
 Our Final Project for the 1 year Full Stack Web development course at [DCI Digital Career Institute Gmbh](https://digitalcareerinstitute.org/de/).
 
 The Project take place from the 20th of August 2022 to the 11th October, 2022.
 
-## About
+**About**
 
 > "The natural healing force within each one of us The Greatest Force in getting well. Our food should be our medicine. Our medicine should be our food." Hippocrates
 
@@ -30,7 +30,7 @@ Our Darling Project "Sonomi, garden of hope" by all means shows our enthusiasm t
 
 One of our team member has floated this idea of working on an application where people not only can buy Natural, Holistic, Chemical free products but also it provides a place to be in a community of like minded people interacting and exchanging ideas.
 
-## Features
+**Features**
 
 The users are able to register an account, login, and browse through different Pages.
 The Pages are:
@@ -56,10 +56,11 @@ Making SONOMI, more functional by adding:
 
 <!-- TECHNOLOGIES -->
 
-## Technologies
+**Technologies**
+```js
 
-  "dependencies": {
-    "@emotion/react": "^11.10.4",
+ {
+    
     "@emotion/styled": "^11.10.4",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
@@ -67,9 +68,6 @@ Making SONOMI, more functional by adding:
     "@mui/icons-material": "^5.10.2",
     "@mui/material": "^5.10.2",
     "@reduxjs/toolkit": "^1.8.5",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -82,9 +80,10 @@ Making SONOMI, more functional by adding:
     "web-vitals": "^2.1.4"
   }
 
+```
 <!-- TEAM -->
 
-## Team
+**Team**
 
 SONOMI Team,
 
@@ -97,7 +96,7 @@ SONOMI Team,
 
 <!-- LINKS -->
 
-## Links
+**Links**
 
 - [SONOMIBackend](https://github.com/SMNST-Final-Project/deployready/tree/main/server)
 - [Figma Design](https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161)
