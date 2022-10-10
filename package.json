@@ -16,9 +16,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SMNST-Final-Project/deployready/issues"
-  },
-  "homepage": "https://github.com/SMNST-Final-Project/deployready#readme",
-  "dependencies": {
-    "path": "^0.12.7"
   }
 }

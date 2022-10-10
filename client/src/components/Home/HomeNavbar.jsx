@@ -41,6 +41,9 @@ const SearchContainer = styled.div`
 `;
 const Input = styled.input`
   border: none;
+  padding: 8px;
+  width: 300px;
+  outline: none;
 `;
 /*const Team = styled.div`
   flex: 1;
@@ -74,7 +77,7 @@ export const HomeNavbar = () => {
             <SearchIcon
               style={{ color: "black", marginLeft: "5px", fontSize: 20 }}
             />
-            <Input />
+            <Input placeholder="search" />
           </SearchContainer>
 
          

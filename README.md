@@ -5,7 +5,7 @@ check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/
 
 <!-- TABLE OF CONTENTS -->
 
-## Table of Contents
+**Table of Contents:**
 
 - [About](#about)  
 - [Features](#features)
@@ -15,7 +15,7 @@ check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/
 
 <!-- ABOUT -->
 
-## Overview
+## Introduction
 
 
 Our Final Project for the 1 year Full Stack Web development course at [DCI Digital Career Institute GmbH](https://digitalcareerinstitute.org/de/).
@@ -24,7 +24,9 @@ The Project take place from the 20th of August 2022 to the 11th October, 2022.
 
 ## About
 
-> "The natural healing force within each one of us The Greatest Force in getting well. Our food should be our medicine. Our medicine should be our food." Hippocrates
+> "The natural healing force within each one of us The Greatest Force in getting well. Our food should be our medicine. Our medicine should be our food."
+>
+>--<cite>*Hippocrates*</cite> 
 
 Our Darling Project "Sonomi, garden of hope" by all means shows our enthusiasm towards Mother Nature and all the resources it has offered Us as Humans to keep our heath and wellbeing at an optimum level.
 
@@ -58,7 +60,7 @@ Making SONOMI, more functional by adding:
 
 ## Technologies
 
-```
+```js
 {
   "name": "server",
   "version": "1.0.0",
@@ -97,18 +99,18 @@ Making SONOMI, more functional by adding:
 
 SONOMI Team,
 
-- [Mehmet Ali ](https://github.com/akayami001): Full Stack Web Developer
-- [Sadaf Qureshi](https://github.com/green2050): Full Stack Web Developer
-- [Thiago Souza](https://github.com/mistersouza): Full Stack Web Developer
-- [Nur Nobi Dulal](https://github.com/nndulal): Full Stack Web Developer
-- [Shadi Maksoud](https://github.com/BananaJoe94): Full Stack Web Developer
+- 🔗 [Mehmet Ali ](https://github.com/akayami001): Full Stack Web Developer
+- 🔗 [Sadaf Qureshi](https://github.com/green2050): Full Stack Web Developer
+- 🔗 [Thiago Souza](https://github.com/mistersouza): Full Stack Web Developer
+- 🔗 [Nur Nobi Dulal](https://github.com/nndulal): Full Stack Web Developer
+- 🔗 [Shadi Maksoud](https://github.com/BananaJoe94): Full Stack Web Developer
 
 
 <!-- LINKS -->
 
 ## Links
 
-- [SONOMI Frontend](https://github.com/SMNST-Final-Project/deployready/tree/main/client)
-- [Figma Design](https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161)
-- [MURAL Design](https://app.mural.co/t/dciwebdevfinalproject20226231/m/dciwebdevfinalproject20226231/1660827077913/0dd01faf6770b00bf65bd15adf06eba68290c697?sender=ubffe43a24a9837cdd8a80039)
-- [Github Project Page](https://github.com/orgs/SMNST-Final-Project/projects/1/views/1?layout=board)
+- 🔗 [SONOMI Frontend](https://github.com/SMNST-Final-Project/deployready/tree/main/client)
+- 🔗 [Figma Design](https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161)
+- 🔗 [MURAL Design](https://app.mural.co/t/dciwebdevfinalproject20226231/m/dciwebdevfinalproject20226231/1660827077913/0dd01faf6770b00bf65bd15adf06eba68290c697?sender=ubffe43a24a9837cdd8a80039)
+- 🔗 [Github Project Page](https://github.com/orgs/SMNST-Final-Project/projects/1/views/1?layout=board)

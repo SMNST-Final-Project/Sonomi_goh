@@ -43,12 +43,13 @@ const SearchContainer = styled.div`
   margin-bottom: 5px;
   border: none;
   cursor: pointer;
+  
 `;
 const Input = styled.input`
   border: none;
   padding: 8px;
   width: 300px;
-
+  outline: none;
   ${mobile({ width: "50px" })}
 `;
 const Right = styled.div`

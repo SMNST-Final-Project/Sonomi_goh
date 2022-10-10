@@ -12,10 +12,15 @@ import Sonomi from "../../assets/videoBg/9.png"
 import { Button } from "@mui/material";
 import { HomeOutlined } from "@mui/icons-material";
 
+//images import
+import figma from "../../assets/videoBg/figma.png"
+import mural from "../../assets/videoBg/mural.png"
+
 
 
 const Container = styled.div`
   background: #ebe2e2;
+  overflow: hidden;
 `
 const TeamNav = styled.div`
 display: flex;
@@ -26,11 +31,13 @@ justify-content: center;
 `;
 
 const Hr = styled.hr`
-  background-color: #887272;
+  background-color: #dad0d0d1;
   border: none;
   height: 10px;
 `;
 
+//Link Styles
+const linkStyling = {textDecoration:"none", color:"black"}
 export const Team = () => {
   return (
     <Container>
@@ -68,11 +75,12 @@ export const Team = () => {
         </div>
          </div>
       <Hr/>
+      
     {/**second video */}
       <section 
       className='team padding' 
       style={{
-        backgroundColor: " #ebe2e299;",
+        backgroundColor: " #fad4d4fb;",
         paddingLeft: "250px",
         paddingRight:"250px",
         paddingTop: "100px"
@@ -84,6 +92,34 @@ export const Team = () => {
         </section>
         
       <Hr/>
+     {/**tec section */}
+            <div className='best'>
+            <h1>See which technologies we've used</h1>
+
+            <div className='container'>
+
+             <Link to={{pathname:"https://app.mural.co/t/dciwebdevfinalproject20226231/m/dciwebdevfinalproject20226231/1660827077913/0dd01faf6770b00bf65bd15adf06eba68290c697?sender=ubffe43a24a9837cdd8a80039"}}
+             target="_blank" 
+             style={linkStyling}
+             > 
+                <img src={mural} alt='mural' />
+                <h2 >" Mural "</h2>
+                </Link>
+              <Link 
+              to={{
+                pathname:
+                  "https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161"
+              }}
+              target="_blank"
+              style={linkStyling}
+              >   <img src={figma} alt='figma' /><h2>" Figma "</h2></Link> 
+               
+            </div>
+
+    
+            </div>
+            <Hr/> 
+          
       <Footer />
       <Announcement/>
     </Container>
