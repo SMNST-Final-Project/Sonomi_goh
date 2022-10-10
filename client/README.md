@@ -1,6 +1,6 @@
 <h1 align="center">Sonomi App Frontend</h1>
 <p align="center">
-check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/server" target="_blank">BackEnd</a> or our <a href="" target="_blank">live app</a>
+check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/server" target="_blank">BackEnd</a> or our <a href="https://sonomi.herokuapp.com/" target="_blank">live app</a>
 </p>
 
 <!-- TABLE OF CONTENTS -->
