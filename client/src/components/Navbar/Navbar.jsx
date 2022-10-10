@@ -19,6 +19,7 @@ const Container = styled.div`
   background-color: #ebe2e2;
   ${mobile({ height: "40px" })}
 `;
+
 const Wrapper = styled.div`
   padding: 20px 40px;
   display: flex;

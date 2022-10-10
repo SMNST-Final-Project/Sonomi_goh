@@ -7,14 +7,11 @@ import { Footer } from "../../components/Footer/Footer";
 import styled from "styled-components";
 import "./index.css";
 import { Announcement } from "../Announcement/Announcement";
-import { Link } from "react-router-dom";
-import Sonomi from "../../assets/videoBg/9.png"
-import { Button } from "@mui/material";
-import { HomeOutlined } from "@mui/icons-material";
 
 //images import
 import figma from "../../assets/videoBg/figma.png"
 import mural from "../../assets/videoBg/mural.png"
+
 
 
 
@@ -40,7 +37,11 @@ const Hr = styled.hr`
 const linkStyling = {textDecoration:"none", color:"black"}
 export const Team = () => {
   return (
+   <>
+
+ 
     <Container>
+  
   {/**Logo */}
  
         
@@ -98,9 +99,10 @@ export const Team = () => {
     
             </div>
             <Hr/> 
-          
       <Footer />
+            <TeamNav/>
       <Announcement/>
     </Container>
+    </> 
   );
 };

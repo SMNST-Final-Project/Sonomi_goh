@@ -6,7 +6,6 @@ import { Products } from "../../components/Products/Products";
 import { Newsletter } from "../../components/Newsletter/Newsletter";
 import { Footer } from "../../components/Footer/Footer";
 import { mobile } from "../../responsive";
-import { Navbar } from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 
 const ContainerOne = styled.div``;
@@ -29,9 +28,6 @@ color: #696363;
 `
 const linkStyling = {textDecoration:"none", color:"black", marginLeft:"60px"}
 
-const Title = styled.h1`
-  margin: 20px;
-`;
 
 const FilterContainer = styled.div`
   display: flex;
@@ -92,7 +88,7 @@ export const ProductList = () => {
  
        </ContainerTwo>
 
-      <Title>{category}</Title>
+      
       <FilterContainer>
         <Filter>
           <FilterText>Sort Products</FilterText>
