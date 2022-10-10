@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { mobile } from "../../responsive.js";
 import Sonomi from "../../assets/videoBg/9.png";
 import { SubNav } from "./SubNav.jsx";
+import { useLocation } from "react-router-dom";
 
 // redux
 import { useSelector } from "react-redux";
@@ -66,13 +67,20 @@ const MenuItem = styled.div`
 `;
 
 export const Navbar = (props) => {
-  
+  const location = useLocation();
+  console.log("my location", location.pathname);
+
   const quantity = useSelector((state) => {
     console.log("total quantity", state);
     return state.cart.cartTotalQuantity;
   });
 
   return (
+
+   <>
+
+      { location.pathname === "/login" || location.pathname === "/signup" ? null :
+
     <>
       <Container>
         <Wrapper>
@@ -161,8 +169,6 @@ export const Navbar = (props) => {
 
                 </>
             )}
-
-            
             <MenuItem>
               {/**redux added */}
               <Badge badgeContent={quantity} component={Link} to={"/cart"}>
@@ -173,6 +179,9 @@ export const Navbar = (props) => {
         </Wrapper>
       </Container>
       <SubNav/>
+      </>
+       }
+
     </>
   );
 };
