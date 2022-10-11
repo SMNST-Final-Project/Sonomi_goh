@@ -48,7 +48,7 @@ export const Pay = () => {
     const makeRequest = async () => {
       try{
         const res = await axios.post(
-          "http://localhost:5500/api/checkout/payment",
+          "https://sonomi.herokuapp.com/api/checkout/payment",
           {
             tokenId: stripeToken.id,
             amount: 5500,

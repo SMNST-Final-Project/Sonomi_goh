@@ -1,6 +1,5 @@
 import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
-import { Navbar } from "../components/Navbar/Navbar";
 import { Footer } from "../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
@@ -90,12 +89,6 @@ const ProductName = styled.span``;
 
 const ProductId = styled.span``;
 
-const ProductColor = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-`;
 
 const PriceDetail = styled.div`
   flex: 1;
@@ -204,8 +197,7 @@ export const Cart = () => {
           </Link>
           <TopTexts>
             <TopText>
-              <ShoppingBasket />
-              (2)
+              <ShoppingBasket />(0)
             </TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>

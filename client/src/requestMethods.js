@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/";
+const BASE_URL = "https://sonomi.herokuapp.com/";
 const TOKEN = localStorage.getItem("token")
 
 export const publicRequest = axios.create({

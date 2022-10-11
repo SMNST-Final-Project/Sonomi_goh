@@ -17,8 +17,8 @@ export const Products = ({ category }) => {
     const getProducts = async () => {
       try {
         const targetUrl = category
-          ? `http://localhost:5000/products?category=${category}`
-          : "http://localhost:5000/products";
+          ? `https://sonomi.herokuapp.com/products?category=${category}`
+          : "https://sonomi.herokuapp.com/products";
         const res = await axios.get(targetUrl, {
           headers: {
             authorization: `Bearer ${localStorage.getItem("token")}`,

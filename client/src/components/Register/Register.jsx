@@ -54,7 +54,7 @@ const Register = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/users/signup", user, {
+      .post("https://sonomi.herokuapp.com/users/signup", user, {
         headers: {
           "Content-Type": "application/json",
         },

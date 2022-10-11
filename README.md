@@ -1,6 +1,6 @@
 <h1 align="center">Sonomi App Frontend</h1>
 <p align="center">
-check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/server" target="_blank">FrontEnd</a> or our <a href="" target="_blank">live app</a>
+check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/server" target="_blank">FrontEnd</a> or our <a href="https://sonomi.herokuapp.com/" target="_blank">live app</a>
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -15,24 +15,24 @@ check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/
 
 <!-- ABOUT -->
 
-## Introduction
+**Introduction**
 
 
 Our Final Project for the 1 year Full Stack Web development course at [DCI Digital Career Institute GmbH](https://digitalcareerinstitute.org/de/).
 
 The Project take place from the 20th of August 2022 to the 11th October, 2022.
 
-## About
+**About**
 
 > "The natural healing force within each one of us The Greatest Force in getting well. Our food should be our medicine. Our medicine should be our food."
 >
->--<cite>*Hippocrates*</cite> 
+>-<cite>*Hippocrates*</cite> 
 
 Our Darling Project "Sonomi, garden of hope" by all means shows our enthusiasm towards Mother Nature and all the resources it has offered Us as Humans to keep our heath and wellbeing at an optimum level.
 
 One of our team member has floated this idea of working on an application where people not only can buy Natural, Holistic, Chemical free products but also it provides a place to be in a community of like minded people interacting and exchanging ideas.
 
-## Features
+**Features**
 
 The users are able to register an account, login, and browse through different Pages.
 The Pages are:
@@ -58,22 +58,15 @@ Making SONOMI, more functional by adding:
 
 <!-- TECHNOLOGIES -->
 
-## Technologies
+**Technologies**
 
 ```js
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
+
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "start": "nodemon index.js"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
@@ -86,16 +79,13 @@ Making SONOMI, more functional by adding:
     "strip": "^3.0.0",
     "stripe": "^10.8.0",
     "uuidv4": "^6.2.13"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.19"
-  }
+  
 }
 ```
 
 <!-- TEAM -->
 
-## Team
+**Team**
 
 SONOMI Team,
 
@@ -108,7 +98,7 @@ SONOMI Team,
 
 <!-- LINKS -->
 
-## Links
+**Links**
 
 - 🔗 [SONOMI Frontend](https://github.com/SMNST-Final-Project/deployready/tree/main/client)
 - 🔗 [Figma Design](https://www.figma.com/file/3vUNctE4gwb82uO6gefGFT/Final-Project?node-id=127%3A161)

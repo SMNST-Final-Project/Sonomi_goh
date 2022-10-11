@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   background-color:  #ebe2e2;
   position: relative;
@@ -37,6 +37,7 @@ const Arrow = styled.div`
 //carousal
 const Wrapper = styled.div`
     height: 100%;
+    margin-top: 50px;
     display: flex;
     transition: all 1.5s ease;
     transform: translateX(${(props) => props.slideIndex * -100}vw);
@@ -45,13 +46,12 @@ const Wrapper = styled.div`
 const Slide = styled.div`
 width: 100vw;
 height: 100vh;
-margin-top: 40px;
+
     display: flex;
     align-items: center;
-    border-top: 5px;
-    border-right: 15px;
+    border-right: 35px;
     border-left: 15px;
-    border-bottom: 10px;
+    border-bottom: 15px;
     border-style: solid;
     border-color: #ebe2e2;
     background-color: #${(props) => props.bg};
