@@ -20,7 +20,7 @@ check our <a href="https://github.com/SMNST-Final-Project/deployready/tree/main/
 
 Our Final Project for the 1 year Full Stack Web development course at [DCI Digital Career Institute GmbH](https://digitalcareerinstitute.org/de/).
 
-The Project take place from the 20th of August 2022 to the 11th October, 2022.
+The Project took place from the 20th of August 2022 to the 11th October, 2022.
 
 **About**
 
@@ -28,7 +28,7 @@ The Project take place from the 20th of August 2022 to the 11th October, 2022.
 >
 >-<cite>*Hippocrates*</cite> 
 
-Our Darling Project "Sonomi, garden of hope" by all means shows our enthusiasm towards Mother Nature and all the resources it has offered Us as Humans to keep our heath and wellbeing at an optimum level.
+Our Darling Project "Sonomi, garden of hope" by all means shows our enthusiasm towards Mother Nature and all the resources it has offered Us as Humans to keep our health and wellbeing at an optimum level.
 
 One of our team member has floated this idea of working on an application where people not only can buy Natural, Holistic, Chemical free products but also it provides a place to be in a community of like minded people interacting and exchanging ideas.
 
